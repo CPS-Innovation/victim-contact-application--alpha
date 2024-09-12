@@ -1,0 +1,201 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="utilitymenu">
+  <div id="logindeets">
+    <div class="govuk-body">Sarah Lloyd</div><div class="govuk-body"><a href="#" class="govuk-link">Logout</a></div>
+  </div>
+</div>
+<div class="govuk-width-container" id="dashboard">
+  
+  <main class="govuk-main-wrapper">
+    
+    <div class="govuk-grid-row">
+      
+      <div class="govuk-grid-column-full">
+
+        <div class="govuk-tabs" data-module="govuk-tabs">
+
+          <div class="govuk-tabs__panel" id="tab-1">
+            <h1 class="govuk-heading-l">Victims & Witnesses</h1>
+            <span class="govuk-caption-m">Last synced: 09:35 today</span>
+
+            <div class="filter-row">
+              <div class="filter search-row">
+                <label>Search by <strong>name</strong>, <strong>date of birth</strong> or <strong>case URN</strong></label>
+                <input class="govuk-input govuk-!-width-one-third" id="one-half" name="oneHalf" type="text"><button class="govuk-button search-button">Search</button>      
+              </div>
+              <div class="filter">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses" checked>
+                  <label class="govuk-label govuk-checkboxes__label" for="waste">
+                    Victims Only
+                  </label>
+                </div>
+              </div>
+            </div>
+            <table class="govuk-table" id="wittnesstable">
+              <thead class="govuk-table__head">
+              <tr class="tableizer-firstrow">
+                <th scope="col" class="govuk-table__header">Full Name</th>
+                <th scope="col" class="govuk-table__header">Case URNs</th>
+                <th scope="col" class="govuk-table__header">Date of birth</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="" class="action">Adelia Hand</td>
+                <td class="govuk-table__cell">13MI507319</td>
+                <td class="govuk-table__cell">20/12/1987</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="" class="action">Adelle Bernhard</a></td>
+                <td class="govuk-table__cell">89RU929022</td>
+                <td class="govuk-table__cell">31/05/1967</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="" class="action">Adolfo Boyle</a></td>
+                <td class="govuk-table__cell">22XE344520</td>
+                <td class="govuk-table__cell">12/01/1987</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="" class="action">Adolphus Upto</a>n</td>
+                <td class="govuk-table__cell">95FQ908123</td>
+                <td class="govuk-table__cell">01/12/1965</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="" class="action">Aiyana Hilpert</a></td>
+                <td class="govuk-table__cell">42SZ226723</td>
+                <td class="govuk-table__cell">24/01/1999</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="" class="action">Alberto Gulgowski</a></td>
+                <td class="govuk-table__cell">86ML070622</td>
+                <td class="govuk-table__cell">25/09/1987</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="" class="action">Alexa Mertz</a></td>
+                <td class="govuk-table__cell">55GC560318</td>
+                <td class="govuk-table__cell">26/12/1987</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="" class="action">Alfonzo O'Keefe</a></td>
+                <td class="govuk-table__cell">93MQ973622</td>
+                <td class="govuk-table__cell">03/08/2003</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="" class="action">Alisha Kovacek</a></td>
+                <td class="govuk-table__cell">50CV755418</td>
+                <td class="govuk-table__cell">28/12/1987</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="" class="action">Allison Padberg</a></td>
+                <td class="govuk-table__cell">97RD890722</td>
+                <td class="govuk-table__cell">29/12/1987</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="" class="action">Amber Morar</a></td>
+                <td class="govuk-table__cell">29KS137823</td>
+                <td class="govuk-table__cell">30/12/1987</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="" class="action">Amir Watsica-Hermiston</a></td>
+                <td class="govuk-table__cell">12EV007022</td>
+                <td class="govuk-table__cell">04/01/1998</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="" class="action">Amira Oberbrunner</a></td>
+                <td class="govuk-table__cell">14TZ224319</td>
+                <td class="govuk-table__cell">01/01/1963</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="" class="action">Annetta Monahan</a></td>
+                <td class="govuk-table__cell">13DR508422</td>
+                <td class="govuk-table__cell">02/11/2009</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="" class="action">Aracely Schroeder</a></td>
+                <td class="govuk-table__cell">95FQ908123</td><td class="govuk-table__cell">03/01/1993</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="" class="action">Arnold Carroll</a></td>
+                <td class="govuk-table__cell">34OR078719</td>
+                <td class="govuk-table__cell">07/01/1943</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="" class="action">Ashleigh Cormier</a></td>
+                <td class="govuk-table__cell">83AZ587323</td>
+                <td class="govuk-table__cell">05/01/2005</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="" class="action">Bo Halvorson</a></td>
+                <td class="govuk-table__cell">06EV463620</td>
+                <td class="govuk-table__cell">06/01/2001</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="" class="action">Brandon Kessler</a></td>
+                <td class="govuk-table__cell">06RO469021</td>
+                <td class="govuk-table__cell">29/12/1987</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="" class="action">Bridgette McDermott</a></td>
+                <td class="govuk-table__cell">79ES290522</td>
+                <td class="govuk-table__cell">08/01/1988</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <nav class="govuk-pagination" aria-label="Pagination">
+            <div class="govuk-pagination__prev">
+              <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
+                <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                  <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+                </svg>
+                <span class="govuk-pagination__link-title">
+                  Previous<span class="govuk-visually-hidden"> page</span>
+                </span>
+              </a>
+            </div>
+            <ul class="govuk-pagination__list">
+              <li class="govuk-pagination__item">
+                <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1">
+                  1
+                </a>
+              </li>
+              <li class="govuk-pagination__item govuk-pagination__item--current">
+                <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2" aria-current="page">
+                  2
+                </a>
+              </li>
+              <li class="govuk-pagination__item">
+                <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+                  3
+                </a>
+              </li>
+            </ul>
+            <div class="govuk-pagination__next">
+              <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+                <span class="govuk-pagination__link-title">
+                  Next<span class="govuk-visually-hidden"> page</span>
+                </span>
+                <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                  <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                </svg>
+              </a>
+            </div>
+          </nav>
+          </div>
+        </div>       
+      </div>
+    </div>
+  </main>
+</div>
+
+
+
+{% endblock %}

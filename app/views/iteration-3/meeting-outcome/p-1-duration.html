@@ -1,0 +1,37 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        What was the duration of the meeting?
+      </h1>
+      <p class="govuk-body">Enter the duration of the meeting in hours and minutes.</p>
+      <form class="form" action="p-3-attendees" method="post">
+        <div class="govuk-form-group">
+          <input class="govuk-input govuk-input--width-10" id="width-6" name="meeting-duration" type="time">
+        </div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+        <button class="govuk-button govuk-button--secondary">Save</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

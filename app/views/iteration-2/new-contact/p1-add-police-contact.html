@@ -1,0 +1,81 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third hide">  
+      <ul id="timeline-dtm">
+        <li>
+          <div class="bluedisc"></div><a href="p1-add-police-contact">Add police contact details</a>
+        </li>
+        <li>
+          <div class="bluedisc bluediscdone"></div><a href="p2-pmoc">Victims preferred method of contact</a>
+        </li>
+        <li>
+          <div class="bluedisc bluediscdone"></div><a href="p3-populate-letter">Create duty to meet letter</a>
+        </li>
+        <li>
+          <div class="bluedisc bluediscdone"></div><a href="p3-populate-letter">Send the letter</a>
+        </li>
+      </ul>
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Add police contact details
+      </h1>
+
+      <form class="form" action="p2-pmoc" method="post">
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="width-20">
+            Name of police officer in charge
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="width-20" name="pcname" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="width-10">
+            Collar number
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="width-10" name="collarnumber" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="width-5">
+            Police station
+          </label>
+          <input class="govuk-input govuk-input--width-20 ui-autocomplete-input" id="stations" name="policestations" type="text" autocomplete="off">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="width-4">
+           Telephone
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="width-4" name="pcphone" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="width-3">
+            Email
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="width-3" name="pcemail" type="text">
+        </div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+        <button class="govuk-button govuk-button--secondary">Save</button>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
