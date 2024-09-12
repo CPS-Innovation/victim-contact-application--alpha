@@ -1,0 +1,79 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
+
+    <h1 class="govuk-heading-xl">
+      Prototypes
+    </h1>
+    <ul class="govuk-list prototypes">
+      <li>
+        <h2 class="govuk-heading-m">Iteration 3 - <span class="govuk-hint">03 September 2024</span></h2>
+        <p></p>
+        <a class="govuk-button govuk-button--secondary" href="iteration-3/index">View</a>
+        <ul class="govuk-list">
+          <li> <a href="iteration-3/witness#contacts?meetinghappens">Meeting should have happened</a></li>
+        </ul>
+      
+        <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--xl">
+
+      </li>
+      <li>
+        <h2 class="govuk-heading-m">Iteration 2 - <span class="govuk-hint">28 August 2024</span></h2>
+        <p></p>
+        <a class="govuk-button govuk-button--secondary" href="iteration-2/index">View</a>
+        <ul class="govuk-list govuk-bullets">
+          <li>
+            <a href="iteration-2/new-contact/p1-add-police-contact#contacts">New / add victim contact</a>
+          </li>
+        </ul>
+        <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--xl">
+      </li>
+      <li>
+        <h2 class="govuk-heading-m">Iteration 1.1. - Duty to meet - <span class="govuk-hint">13 August 2024</span></h2>
+        <p>Adding and updating victim meeting information</p>
+        <a href="iteration-1-1/index.html" class="govuk-button govuk-button--secondary">View 1.1</a>
+        <ul class="govuk-list govuk-bullets">
+          <li>
+            <a href="iteration-1-1/witness?caseid=&name=Adelia%20Hand&caseurn=13MI507319#contacts">New / add victim contact</a>
+          </li>
+          <li>
+            <a href="iteration-1-1/witness-meeting-outcome?caseid=&name=Adelia%20Hand&caseurn=13MI507319#contacts">Update meeting outcome (post victim meeting)</a>
+          </li>
+          <li>
+            <a href="iteration-1-1/witness-decision-to-charge?caseid=&name=Adelia%20Hand&caseurn=13MI507319#contacts">Notify victim of charging decision</a>
+          </li>
+        </ul>
+
+        <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--xl">
+      </li>
+      <li>
+        <h2 class="govuk-heading-m">Iteration 1 - <span class="govuk-hint">12 August 2024</span></h2>
+        <p>First iteration of VCA for round 2 of UR</p>
+        <a class="govuk-button govuk-button--secondary" href="iteration-1/index">View</a>
+        <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--xl">
+      </li>
+      <li>
+        <h2 class="govuk-heading-m">Iteration 0 - <span class="govuk-hint">30 July 2024</span></h2>
+        <p>First draft of VCA</p>
+        <a class="govuk-button govuk-button--secondary" href="iteration-0/index">View</a>
+        <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--xl">
+      </li>
+      <li>
+        <h2 class="govuk-heading-m">Version 1 - <span class="govuk-hint">9 July 2024</span></h2>
+        <p>Prototype transposed from discovery</p>
+        <a class="govuk-button govuk-button--secondary" href="v1/index">View</a>
+        <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--xl">
+      </li>
+    </ul>
+    
+  </div>
+</div>
+
+{% endblock %}

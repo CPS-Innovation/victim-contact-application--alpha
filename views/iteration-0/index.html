@@ -1,0 +1,219 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="utilitymenu">
+  <div id="logindeets">
+    <div class="govuk-body">Sarah Lloyd</div><div class="govuk-body"><a href="#" class="govuk-link">Logout</a></div>
+  </div>
+</div>
+<div class="govuk-width-container" id="dashboard">
+  
+  <main class="govuk-main-wrapper">
+    
+    <div class="govuk-grid-row">
+      
+      <div class="govuk-grid-column-full">
+
+        <div class="govuk-tabs" data-module="govuk-tabs">
+
+          <div class="govuk-tabs__panel" id="tab-1">
+            <h1 class="govuk-heading-l">Victims & Witnesses</h1><span class="govuk-caption-m">Last synced: 09:35 today</span>
+
+            <div class="filter-row">
+              <div class="filter search-row">
+                <input class="govuk-input govuk-!-width-one-third" id="one-half" name="oneHalf" type="text"><button class="govuk-button search-button">Search</button>      
+              </div>
+              <div class="filter">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses" checked>
+                  <label class="govuk-label govuk-checkboxes__label" for="waste">
+                    Victims Only
+                  </label>
+                </div>
+              </div>
+            </div>
+            <table class="govuk-table" id="wittnesstable">
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">ID</th>
+                  <th scope="col" class="govuk-table__header">Full Name</th>
+                  <th scope="col" class="govuk-table__header">Case URNs</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><b>W00377</b></td>
+                  <td class="govuk-table__cell"><a href="" class="action">Adelia Hand</a><div class="dot red"></div> <div class="dot orange"></div></td>
+                  <td class="govuk-table__cell">24IN206723</td>
+
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><b>W00355</b></td>
+                  <td class="govuk-table__cell"><a href="" class="vrr">Adelle Bernhard</a><div class="dot orange"></div></td>
+                  <td class="govuk-table__cell">89RU929022</td>
+
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><b>W00122</b></td>
+                  <td class="govuk-table__cell"><a href="" class="">Adolfo Boyle</a></td>
+                  <td class="govuk-table__cell">22XE344520</td>
+
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><b>W00124</b></td>
+                  <td class="govuk-table__cell"><a href="" class="">Adolphus Upton</a></td>
+                  <td class="govuk-table__cell">13MI507319</td>
+
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><b>W00296</b></td>
+                  <td class="govuk-table__cell"><a href="" class="">Aiyana Hilpert</a></td>
+                  <td class="govuk-table__cell">42SZ226723</td>
+
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><b>W00011</b></td>
+                  <td class="govuk-table__cell"><a href="" class="">Alberto Gulgowski</a></td>
+                  <td class="govuk-table__cell">86ML070622</td>
+
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><b>W00035</b></td>
+                  <td class="govuk-table__cell"><a href="" class="">Alexa Mertz</a></td>
+                  <td class="govuk-table__cell">55GC560318</td>
+
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><b>W00271</b></td>
+                  <td class="govuk-table__cell"><a href="" class="">Alfonzo O'Keefe</a></td>
+                  <td class="govuk-table__cell">93MQ973622</td>
+
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><b>W00260</b></td>
+                  <td class="govuk-table__cell"><a href="" class="">Alisha Kovacek</a></td>
+                  <td class="govuk-table__cell">50CV755418</td>
+                 
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><b>W00407</b></td>
+                  <td class="govuk-table__cell"><a href="" class="">Allison Padberg</a></td>
+                  <td class="govuk-table__cell">97RD890722</td>
+
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><b>W00185</b></td>
+                  <td class="govuk-table__cell"><a href="" class="">Amber Morar</a></td>
+                  <td class="govuk-table__cell">29KS137823</td>
+                 
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><b>W00073</b></td>
+                  <td class="govuk-table__cell"><a href="" class="">Amir Watsica-Hermiston</a></td>
+                  <td class="govuk-table__cell">12EV007022</td>
+
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><b>W00343</b></td>
+                  <td class="govuk-table__cell"><a href="" class="">Amira Oberbrunner</a></td>
+                  <td class="govuk-table__cell">14TZ224319</td>
+
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><b>W00365</b></td>
+                  <td class="govuk-table__cell"><a href="" class="">Annetta Monahan</a></td>
+                  <td class="govuk-table__cell">13DR508422</td>
+
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><b>W00373</b></td>
+                  <td class="govuk-table__cell"><a href="" class="">Aracely Schroeder</a></td>
+                  <td class="govuk-table__cell">95FQ908123</td>
+
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><b>W00216</b></td>
+                  <td class="govuk-table__cell"><a href="" class="">Arnold Carroll</a></td>
+                  <td class="govuk-table__cell">34OR078719</td>
+
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><b>W00038</b></td>
+                  <td class="govuk-table__cell"><a href="" class="">Ashleigh Cormier</a></td>
+                  <td class="govuk-table__cell">83AZ587323</td>
+
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><b>W00008</b></td>
+                  <td class="govuk-table__cell"><a href="" class="">Bo Halvorson</a></td>
+                  <td class="govuk-table__cell">06EV463620</td>
+
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><b>W00095</b></td>
+                  <td class="govuk-table__cell"><a href="" class="">Brandon Kessler</a></td>
+                  <td class="govuk-table__cell">06RO469021</td>
+
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><b>W00331</b></td>
+                  <td class="govuk-table__cell"><a href="" class="">Bridgette McDermott</a></td>
+                  <td class="govuk-table__cell">79ES290522</td>
+
+                </tr>
+              </tbody>
+          </table>
+          <nav class="govuk-pagination" aria-label="Pagination">
+            <div class="govuk-pagination__prev">
+              <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
+                <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                  <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+                </svg>
+                <span class="govuk-pagination__link-title">
+                  Previous<span class="govuk-visually-hidden"> page</span>
+                </span>
+              </a>
+            </div>
+            <ul class="govuk-pagination__list">
+              <li class="govuk-pagination__item">
+                <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1">
+                  1
+                </a>
+              </li>
+              <li class="govuk-pagination__item govuk-pagination__item--current">
+                <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2" aria-current="page">
+                  2
+                </a>
+              </li>
+              <li class="govuk-pagination__item">
+                <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+                  3
+                </a>
+              </li>
+            </ul>
+            <div class="govuk-pagination__next">
+              <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+                <span class="govuk-pagination__link-title">
+                  Next<span class="govuk-visually-hidden"> page</span>
+                </span>
+                <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                  <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                </svg>
+              </a>
+            </div>
+          </nav>
+          </div>
+        </div>       
+      </div>
+    </div>
+  </main>
+</div>
+
+
+
+{% endblock %}

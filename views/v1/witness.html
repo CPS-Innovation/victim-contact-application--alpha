@@ -1,0 +1,453 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<a href="index" class="govuk-back-link">Back</a>
+<main class="govuk-main-wrapper" id="wittness">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl"></h1>
+      <span id="victimid" class="govuk-caption-l"></span>
+
+      
+      <div class="govuk-tabs" data-module="govuk-tabs">
+        <h2 class="govuk-tabs__title">
+          Contents
+        </h2>
+        <ul class="govuk-tabs__list">
+          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+            <a class="govuk-tabs__tab" href="#overview">
+              Overview
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#personal">
+              Personal details
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#cases">
+              Cases
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#communications">
+              Communications
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#contacts">
+              Contacts
+            </a>
+          </li>
+        </ul>
+        <div class="govuk-tabs__panel" id="overview">
+          <h2 class="govuk-heading-l">Overview</h2>
+
+          <div id="alertbox">
+            <h2 class="govuk-heading-m">Tasks</h2>
+            <span id="taskdate"><span class="govuk-body govuk-!-font-weight-bold">Charges dropped</span> 03/07/2023</span>
+            <button class="govuk-button" download>Download template</button>
+            <button class="govuk-button">Create communication</button>
+          </div>
+
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Victims address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                130 Denton Avenue,
+                Banton,
+                Dunbartonshire,
+                Scotland,
+                G65 0QR
+              </dd>
+              <dd class="govuk-summary-list__actions">
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Characteristics
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <strong class="govuk-tag">Universal</strong>
+                <strong class="govuk-tag">Vulnerable</strong>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                </dd>
+            </div>
+          </dl>
+          <div class="iframe">
+            <div>Case Status App iFrame</div>
+          </div>
+          <div class="iframe vrrframe">
+            <div>VRR Status iFrame</div>
+          </div>
+          
+        </div>
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="personal">
+          <div class="top-section">
+            <h2 class="govuk-heading-l">Personal details</h2>
+            <a href="" class="govuk-button">Edit</a>
+          </div>
+          
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header"></th>
+                <th scope="col" class="govuk-table__header"></th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Name Preference</th>
+                <td class="govuk-table__cell">Dortha Runolfsdottir</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Classification</th>
+                <td class="govuk-table__cell">
+                  <strong class="govuk-tag">Universal</strong>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Preferred Language</th>
+                <td class="govuk-table__cell">English</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Date of Birth</th>
+                <td class="govuk-table__cell">17/09/1944</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Age</th>
+                <td class="govuk-table__cell">79</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Contact Preference</th>
+                <td class="govuk-table__cell">Letter</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Mobile</th>
+                <td class="govuk-table__cell">+447044234787</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Landline</th>
+                <td class="govuk-table__cell">+441926963051</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Email</th>
+                <td class="govuk-table__cell">Dortha.Runolfsdottir6@hotmail.com</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Address</th>
+                <td class="govuk-table__cell">753 Oswald Mills Apt. 948</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Characteristics</th>
+                <td class="govuk-table__cell">
+                  <div style="display: flex; gap: 1em;">
+                    <strong class="govuk-tag">Intimidated</strong>
+                    <strong class="govuk-tag">Vulnerable</strong>
+                  </div>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Characteristic Details</th>
+                <td class="govuk-table__cell">Aer quam censura uterque asporto terror denego. Voluptatibus repudiandae trucido. Caveo quis testimonium delectatio adhuc solium talio theca.</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Special Measures Granted</th>
+                <td class="govuk-table__cell">Currus cuppedia cohaero. Stultus illum patior cervus. Temeritas tristis tergum aeternus degero.</td>
+              </tr>
+            </tbody>
+
+
+            
+          </table>
+
+          
+        </div>
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="cases">
+          <h2 class="govuk-heading-l">Cases</h2>
+
+          <div class="case-section">
+            <h3 class="govuk-heading-m">33FW405720</h3>
+            <div class="iframe">
+              <div>Case Status App iFrame</div>
+            </div>
+
+            <table class="govuk-table">
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header"></th>
+                  <th scope="col" class="govuk-table__header"></th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Type</th>
+                  <td class="govuk-table__cell">Non RASSO</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Description</th>
+                  <td class="govuk-table__cell">Audax ulciscor adaugeo ante amplexus molestias vitium consequatur</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Police Initial Needs Assessment</th>
+                  <td class="govuk-table__cell">Defendo astrum patruus denego cur compono. Cometes porro territo assentator. Tego ambulo tamdiu adimpleo accusantium adduco deludo.</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Witness Care Unit Initial Needs Assessment</th>
+                  <td class="govuk-table__cell">Bonus aer carmen canis sodalitas. Tersus audax repellendus. Coaegresco tenax somniculosus.</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">DASH Assessment</th>
+                  <td class="govuk-table__cell">Titulus comburo tollo temperantia. Terra repudiandae adhuc decens caute. Torqueo cui numquam voluptates.</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Victim Personal Statement (VPS) Submitted</th>
+                  <td class="govuk-table__cell">No</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+
+          <div class="case-section">
+            <h3 class="govuk-heading-m">89QE235922</h3>
+            <div class="iframe">
+              <div>Case Status App iFrame</div>
+            </div>
+            <table class="govuk-table">
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header"></th>
+                  <th scope="col" class="govuk-table__header"></th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Type</th>
+                  <td class="govuk-table__cell">Non RASSO</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Description</th>
+                  <td class="govuk-table__cell">Audax ulciscor adaugeo ante amplexus molestias vitium consequatur</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Police Initial Needs Assessment</th>
+                  <td class="govuk-table__cell">Defendo astrum patruus denego cur compono. Cometes porro territo assentator. Tego ambulo tamdiu adimpleo accusantium adduco deludo.</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Witness Care Unit Initial Needs Assessment</th>
+                  <td class="govuk-table__cell">Bonus aer carmen canis sodalitas. Tersus audax repellendus. Coaegresco tenax somniculosus.</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">DASH Assessment</th>
+                  <td class="govuk-table__cell">Titulus comburo tollo temperantia. Terra repudiandae adhuc decens caute. Torqueo cui numquam voluptates.</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Victim Personal Statement (VPS) Submitted</th>
+                  <td class="govuk-table__cell">No</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          
+        </div>
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="communications">
+
+          <div class="top-section">
+            <h2 class="govuk-heading-l">Communications timeline</h2> 
+            <a href="" class="govuk-button float-right">Add communication</a>
+          </div>
+
+          <div class="section-row">
+            <div class="float-left">
+              <input class="govuk-input govuk-!-width-one-third" id="one-half" name="oneHalf" type="text"><button class="govuk-button search-button">Search</button>      
+            </div>
+            <div class="govuk-form-group float-left">
+              <select class="govuk-select" id="sort" name="sort">
+                <option value="0">Case Updates &amp; Comms</option>
+                <option value="1">Case Updates</option>
+                <option value="2">Comms</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="moj-timeline section-row">
+            <div class="moj-timeline__item">
+                <div class="moj-timeline__header">
+                    <h2 class="moj-timeline__title">Date of Offences</h2><strong class="govuk-tag">Case Update</strong></div>
+                <p class="moj-timeline__date">
+                    <time>Sunday, November 8, 2020 2:55 PM</time>
+                </p>
+            </div>
+            <div class="moj-timeline__item">
+                <div class="moj-timeline__header">
+                    <h2 class="moj-timeline__title">Investigation</h2><strong class="govuk-tag">Case Update</strong></div>
+                <p class="moj-timeline__date">
+                    <time>Monday, January 11, 2021 11:39 PM</time>
+                </p>
+            </div>
+            <div class="moj-timeline__item">
+                <div class="moj-timeline__header">
+                    <h2 class="moj-timeline__title">Charge Decision</h2><strong class="govuk-tag">Case Update</strong></div>
+                <p class="moj-timeline__date">
+                    <time>Saturday, February 6, 2021 4:21 AM</time>
+                </p>
+            </div>
+            <div class="moj-timeline__item">
+                <div class="moj-timeline__header">
+                    <h2 class="moj-timeline__title">CPS Post-Charge Review and Case Preparation</h2><strong class="govuk-tag">Case Update</strong></div>
+                <p class="moj-timeline__date">
+                    <time>Thursday, May 27, 2021 2:07 PM</time>
+                </p>
+            </div>
+            <div class="moj-timeline__item">
+                <div class="moj-timeline__header">
+                    <h2 class="moj-timeline__title">Hearing</h2><strong class="govuk-tag">Case Update</strong></div>
+                <p class="moj-timeline__date">
+                    <time>Tuesday, January 18, 2022 8:06 AM</time>
+                </p>
+            </div>
+            <div class="moj-timeline__item">
+                <div class="moj-timeline__header">
+                    <h2 class="moj-timeline__title">Case Preparation</h2><strong class="govuk-tag">Case Update</strong></div>
+                <p class="moj-timeline__date">
+                    <time>Sunday, February 13, 2022 12:46 PM</time>
+                </p>
+            </div>
+            <div class="moj-timeline__item">
+                <div class="moj-timeline__header">
+                    <h2 class="moj-timeline__title">Phone</h2><strong tint="GREEN" class="src__Tag-sc-10wvgvx-0 fWuXRL">Communication</strong>
+                    <p class="moj-timeline__byline" style="margin-left: 0.5em;">updated by Joe Bloggs</p>
+                </div>
+                <p class="moj-timeline__date">
+                    <time>Saturday, April 9, 2022 11:28 AM</time>
+                </p>
+                <div class="moj-timeline__description">
+                    <p>Atrox adstringo delectus. Ancilla trans cervus candidus. Conspergo tamquam crinis labore barba.</p>
+                </div>
+            </div>
+            <div class="moj-timeline__item">
+                <div class="moj-timeline__header">
+                    <h2 class="moj-timeline__title">Hold Hearings</h2><strong class="govuk-tag">Case Update</strong></div>
+                <p class="moj-timeline__date">
+                    <time>Thursday, March 16, 2023 8:28 PM</time>
+                </p>
+            </div>
+            <div class="moj-timeline__item">
+                <div class="moj-timeline__header">
+                    <h2 class="moj-timeline__title">Meeting</h2><strong tint="GREEN" class="src__Tag-sc-10wvgvx-0 fWuXRL">Communication</strong>
+                    <p class="moj-timeline__byline" style="margin-left: 0.5em;">updated by Joe Bloggs</p>
+                </div>
+                <p class="moj-timeline__date">
+                    <time>Wednesday, March 22, 2023 5:17 AM</time>
+                </p>
+                <div class="moj-timeline__description">
+                    <p>Vulticulus causa arceo. Suggero universe celer. Sit architecto id attonbitus via.</p>
+                </div>
+            </div>
+            <div class="moj-timeline__item">
+                <div class="moj-timeline__header">
+                    <h2 class="moj-timeline__title">Letter</h2><strong tint="GREEN" class="src__Tag-sc-10wvgvx-0 fWuXRL">Communication</strong>
+                    <p class="moj-timeline__byline" style="margin-left: 0.5em;">updated by Joe Bloggs</p>
+                </div>
+                <p class="moj-timeline__date">
+                    <time>Sunday, March 26, 2023 1:58 PM</time>
+                </p>
+                <div class="moj-timeline__description">
+                    <p>Demulceo deficio ipsam vorago neque summa admiratio spectaculum. Statim sonitus aperiam bardus sperno. Caries voco succurro tepesco trado quia aeger amplitudo eos atqui.</p>
+                    <ul class="moj-timeline__documents">
+                        <li class="moj-timeline__document-item">
+                            <a class="govuk-link" href="#">
+                                <svg class="moj-timeline__document-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" width="20" height="16">
+                                    <path d="M9 7V1.5L14.5 7H9zM2 0C.9 0 0 .9 0 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V6l-6-6H2z"></path>
+                                </svg>letter.pdf</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="moj-timeline__item">
+                <div class="moj-timeline__header">
+                    <h2 class="moj-timeline__title">Email</h2><strong tint="GREEN" class="src__Tag-sc-10wvgvx-0 fWuXRL">Communication</strong>
+                    <p class="moj-timeline__byline" style="margin-left: 0.5em;">updated by Joe Bloggs</p>
+                </div>
+                <p class="moj-timeline__date">
+                    <time>Monday, April 24, 2023 3:39 PM</time>
+                </p>
+                <div class="moj-timeline__description">
+                    <p>Supplanto clam vehemens pectus alveus cum. Succedo conturbo quisquam cilicium creator peior ea temptatio aperte crebro. Verbera blanditiis abbas varius quia vinum trans stips supplanto nisi.</p>
+                </div>
+            </div>
+            <div class="moj-timeline__item">
+                <div class="moj-timeline__header">
+                    <h2 class="moj-timeline__title">Verdict</h2><strong class="govuk-tag">Case Update</strong></div>
+                <p class="moj-timeline__date">
+                    <time>Wednesday, November 22, 2023 11:23 AM</time>
+                </p>
+            </div>
+            <div class="moj-timeline__item">
+                <div class="moj-timeline__header">
+                    <h2 class="moj-timeline__title">Email</h2><strong tint="GREEN" class="src__Tag-sc-10wvgvx-0 fWuXRL">Communication</strong>
+                    <p class="moj-timeline__byline" style="margin-left: 0.5em;">updated by Joe Bloggs</p>
+                </div>
+                <p class="moj-timeline__date">
+                    <time>Monday, January 1, 2024 8:45 AM</time>
+                </p>
+                <div class="moj-timeline__description">
+                    <p>Vinum similique annus aro admiratio ventito depraedor. Comptus dolor cunae antea suffoco vetus voluptatum volva adipiscor sonitus. Speculum versus utrimque beatae vomito.</p>
+                </div>
+            </div>
+            <div class="moj-timeline__item">
+                <div class="moj-timeline__header">
+                    <h2 class="moj-timeline__title">Sentence</h2><strong class="govuk-tag">Case Update</strong></div>
+                <p class="moj-timeline__date">
+                    <time>Saturday, January 6, 2024 4:11 AM</time>
+                </p>
+            </div>
+        </div>
+     
+        </div>
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="contacts">
+          
+          <div class="top-section">
+            <h2 class="govuk-heading-l">Contacts</h2>
+            <a href="" class="govuk-button">Add new</a>
+          </div>
+          
+          <table class="govuk-table govuk-table--small-text-until-tablet">
+            <caption class="govuk-table__caption govuk-table__caption--m">Additional Contacts</caption>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Full Name</th>
+                <th scope="col" class="govuk-table__header">Relation</th>
+                <th scope="col" class="govuk-table__header">Phone</th>
+                <th scope="col" class="govuk-table__header">Email</th>          
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Amber Corwin</td>
+                <td class="govuk-table__cell">Sibling</td>
+                <td class="govuk-table__cell">07683895538</td>
+                <td class="govuk-table__cell">amber.Corwin0@hotmail.com</td> 			
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+
+{% endblock %}

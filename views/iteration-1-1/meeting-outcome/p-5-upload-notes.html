@@ -1,0 +1,47 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Upload meeting notes
+      </h1>
+      <p>PDF and MS word files are accepted</p>
+      <form class="form" action="../witness-meeting-outcome" method="post">
+        
+        <div class="moj-multi-file-upload__upload">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="documents">
+            Upload a file
+          </label>
+          <div class="moj-multi-file-upload__dropzone"><input class="govuk-file-upload moj-multi-file-upload__input" id="documents" name="documents" type="file" multiple=""><p class="govuk-body">Drag and drop files here or</p><label for="documents" class="govuk-button govuk-button--secondary">Choose files</label><div aria-live="polite" role="status" class="govuk-visually-hidden"></div></div>   
+        </div>
+        <button type="submit" class="govuk-button govuk-button--secondary moj-multi-file-upload__button" data-module="govuk-button">
+          Upload file
+        </button><br><br>
+        <hr></hr>
+        <br>
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+        <button class="govuk-button govuk-button--secondary">Save</button>
+      
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
