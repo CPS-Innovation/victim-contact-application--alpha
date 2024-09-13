@@ -1,0 +1,65 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="p3-adjusments" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Who will attend the meeting?
+              </h1>
+            </legend>
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="organisation" name="meeting-attendees" type="checkbox" value="Jamie Smith - Police">
+                <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                  <strong>Jamie Smith</strong> - Police
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="organisation-2" name="meeting-attendees" type="checkbox" value="Bashir Abdi - CPS, RSSO">
+                <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                  <strong>Bashir Abdi</strong> - CPS, RSSO
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="organisation-3" name="meeting-attendees" type="checkbox" value="Adelia Hand - Victim">
+                <label class="govuk-label govuk-checkboxes__label" for="organisation-3">
+                  <strong>Adelia Hand</strong> - Victim
+                </label>
+              </div>
+            </div>
+          </fieldset>
+            <div class="lightgrey">
+            <p class="govuk-body">Please add anyone else who attended the meeting</p>
+            <button class="govuk-button govuk-button--secondary">Add another</button>
+          </div>
+        </div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+        <button class="govuk-button govuk-button--secondary">Save</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

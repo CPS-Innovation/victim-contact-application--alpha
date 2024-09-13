@@ -1,0 +1,67 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="p5-upload-dtm" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                How was the meeting offer made to the victim?
+              </h1>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="whereDoYouLive" name="howwasthemeetingoffered" type="radio" value="Letter by post">
+                <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                  Letter by post
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="whereDoYouLive" name="howwasthemeetingoffered" type="radio" value="Letter delivered by police officer">
+                <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                  Letter delivered by a police officer
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="whereDoYouLive-2" name="howwasthemeetingoffered" type="radio" value="Email">
+                <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+                 Email
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="govuk-form-group">
+          <h2 class="govuk-heading-m">
+              When was the meeting offered to the victim?
+          </h2>
+          <input class="govuk-input govuk-input--width-10" id="width-6" name="whenoffered" type="date">
+        </div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+        <button class="govuk-button govuk-button--secondary">Save</button>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

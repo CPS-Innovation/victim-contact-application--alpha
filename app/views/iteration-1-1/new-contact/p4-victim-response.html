@@ -1,0 +1,99 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="utilitymenu">
+  <div id="logindeets">
+    <div class="govuk-body">Sarah Lloyd</div><div class="govuk-body"><a href="#" class="govuk-link">Logout</a></div>
+  </div>
+</div>
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+      <form class="form" action="p6-cps-locations" method="post">
+
+       
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Has the victim accepted the meeting?
+              </h1>
+            </legend>
+            <div id="contact-hint" class="govuk-hint">
+              Select one option.
+            </div>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+                <label class="govuk-label govuk-radios__label" for="contact">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                
+                
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset" aria-describedby="signIn-hint">
+                    <legend class="govuk-fieldset__legend">
+                     
+                        Has the victim accepted the meeting?
+                      
+                    </legend>
+  
+                    <div class="govuk-radios" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="signIn" name="accpteddecline" type="radio" value="yes" aria-describedby="signIn-item-hint">
+                        <label class="govuk-label govuk-radios__label" for="signIn">
+                         Yes - accepted
+                        </label>
+      
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="signIn-2" name="accpteddecline" type="radio" value="no" aria-describedby="signIn-2-item-hint">
+                        <label class="govuk-label govuk-radios__label" for="signIn-2">
+                         No - declined
+                        </label>
+
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contact-3" name="contact" type="radio" value="text" data-aria-controls="conditional-contact-3">
+                <label class="govuk-label govuk-radios__label" for="contact-3">
+                 No
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-3">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="contact-by-text">
+                    Mobile phone number
+                  </label>
+                  <input class="govuk-input govuk-!-width-one-third" id="contact-by-text" name="contactByText" type="tel" autocomplete="tel">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+        <button class="govuk-button govuk-button--secondary">Save</button>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

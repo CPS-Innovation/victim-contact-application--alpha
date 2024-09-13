@@ -1,0 +1,101 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="utilitymenu">
+  <div id="logindeets">
+    <div class="govuk-body">Sarah Lloyd</div><div class="govuk-body"><a href="#" class="govuk-link">Logout</a></div>
+  </div>
+</div>
+<a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form class="form" action="p4-victim-response" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Has the victim been offered a meeting
+              </h1>
+            </legend>
+            <div id="contact-hint" class="govuk-hint">
+              Select one option.
+            </div>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+                <label class="govuk-label govuk-radios__label" for="contact">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="contact-by-email">
+                    When is the meeting?
+                  </label>
+                  <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contactByEmail" type="date" spellcheck="false" autocomplete="email">
+                </div>
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="contact-by-email">
+                    How was the meeting offered to the victim?
+                  </label>
+                  <div class="govuk-form-group">
+                    <select class="govuk-select" id="preferredcontact" name="preferred-contact">
+                      <option value="Letter">Letter</option>
+                      <option value="Email">Email</option>
+                      <option value="Telephone">Telephone call</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="contact-by-email">
+                    What is the preferred method to meet the victim?
+                  </label>
+                  <div class="govuk-form-group">
+                    <select class="govuk-select" id="sort" name="preferred-contact">
+                      <option value="Letter">Face to face</option>
+                      <option value="Telephone">Teams call</option>
+                      <option value="views">Telephone call</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="Not eligible" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+                <label class="govuk-label govuk-radios__label" for="contact-2">
+                  No
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+               
+              </div>
+
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-3">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="contact-by-text">
+                    Mobile phone number
+                  </label>
+                  <input class="govuk-input govuk-!-width-one-third" id="contact-by-text" name="contactByText" type="tel" autocomplete="tel">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+        <button class="govuk-button govuk-button--secondary">Save</button>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
