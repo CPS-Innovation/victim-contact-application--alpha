@@ -1,6 +1,29 @@
 
 $(document).ready(function() {
 
+  var meetingatttendeetext = $('.meetingattendeesdata').text();
+  meetingatttendeetext = meetingatttendeetext.replace(/,/g, '<br>');
+  $('.meetingattendeesdata').html(meetingatttendeetext);
+
+  $('#show-add-more-fields').hide();
+  $('#toggle-add').click(function(){
+    $('#show-add-more-fields').show();
+    $('#toggle-add').hide();
+  });
+
+
+  $('#addinviteeaction').click(function(){
+    var invname = $('input[name=invitee--name]').val();
+    var invrole = $('input[name=invitee--role]').val();
+    $('.govuk-checkboxes--small').append('<div class="govuk-checkboxes__item"><input class="govuk-checkboxes__input" id="organisation" name="invitess-attended" type="checkbox" value="'+ invname + ' - '+invrole +'"><label class="govuk-label govuk-checkboxes__label" for="organisation"><strong>'+ invname +'</strong> - '+ invrole +'</label> </div>');
+    //$('#invitee-list').append('<li class="invitee govuk-body">'+invname +' - '+ invrole+'</li>');
+    $('#invitee-list').append('<div class="govuk-summary-list__row"><dd class="govuk-summary-list__value">'+ invname + '</dd><dd class="govuk-summary-list__value">'+invrole +'</dd><dd class="govuk-summary-list__value"><div class="govuk-radios__item govuk-radios--small"><input class="govuk-radios__input" id="changedName-2" name="meeting-chair" type="radio" value="'+ invname + '"><label class="govuk-label govuk-radios__label" for="changedName-2"></label></div> </dd></div>');
+    var textval = $('#hideinvitees').val();
+    $('#hideinvitees').val(textval + invname +' - '+ invrole+',');
+    $('input[name=invitee--name]').val('');
+    $('input[name=invitee--role]').val('');
+  });
+
   $('#dashboard-2').closest('main').parent('.govuk-width-container').addClass('newdashboard');
   $('#dashboard-2').closest('body').find('header').addClass('newdashboard-header');
   $('#dashboard-2').closest('body').addClass('dashstyle');
@@ -181,6 +204,14 @@ $(document).ready(function() {
     }
   });
 
+  $('input[name=didimeetinghappen]').change(function(){
+    var eligibletomeet = $(this).val();
+    //alert(eligibletomeet);
+    if (eligibletomeet == 'No'){
+      $('form').attr('action','../meeting-not-conducted')
+    }
+  });
+
   $('select#preferredcontact').change(function(){
     var preferredcontact = $(this).find("option:selected").val();
     alert(preferredcontact);
@@ -288,6 +319,7 @@ $('#closemnotification').click(function(){
     //$('.legacy-loop-1').show(); 
   }
 
+  //add-another-victim-contact
   //loop 3
   if (referrer.indexOf("p4-special-measures") > -1) { 
     $('#contacts .govuk-notification-banner__heading').text('Duty to meet created');
