@@ -27,30 +27,55 @@
             </legend>
             <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="organisation" name="invitess-attended" type="checkbox" value="Jamie Smith">
+                <input class="govuk-checkboxes__input" id="organisation" name="invitess-attended" type="checkbox" value="Jamie Smith - Police">
                 <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                  <strong>Jamie Smith</storng> - Police
+                  <strong>Jamie Smith</strong> - Police
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="organisation-2" name="invitess-attended" type="checkbox" value="Bashir Abdi">
+                <input class="govuk-checkboxes__input" id="organisation-2" name="invitess-attended" type="checkbox" value="Bashir Abdi - CPS, RSSO">
                 <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
                   <strong>Bashir Abdi</strong> - CPS, RSSO
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="organisation-3" name="invitess-attended" type="Adelia Hand" value="Adelia Hand">
+                <input class="govuk-checkboxes__input" id="organisation-3" name="invitess-attended" type="checkbox" value="Adelia Hand - Victim">
                 <label class="govuk-label govuk-checkboxes__label" for="organisation-3">
                   <strong>Adelia Hand</strong> - Victim
                 </label>
               </div>
             </div>
-            CHAIR PERSON!!
+  
+
           </fieldset>
             <div class="lightgrey">
-            <p class="govuk-body">Please add anyone else who attended the meeting</p>
-            <button class="govuk-button govuk-button--secondary">Add another</button>
-          </div>
+              <div id="show-add-more-fields">
+                <div id="add-more-invitees">
+                  <div class="add-invitee-item">
+                    <label class="govuk-label" for="width-10">
+                      Name
+                    </label>
+                   <input class="govuk-input govuk-input--width-10" id="width-10" name="invitee--name" type="text">
+                  </div>
+                  <div class="add-invitee-item">
+                    <label class="govuk-label" for="width-10">
+                      Role
+                    </label>
+                   <input class="govuk-input govuk-input--width-10" id="width-10" name="invitee--role" type="text">
+                  </div>
+                  <div class="add-invitee-item">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="nationality" name="invitee-chairperson" type="checkbox" value="british" aria-describedby="nationality-item-hint">
+                      <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                        Chair person
+                      </label>
+                    </div>
+                  </div>           
+                </div>
+                <div class="govuk-button" id="addinviteeaction">Add invitee</div>
+              </div>
+              <div class="govuk-button govuk-button--secondary" id="toggle-add">Add another</div>
+            </div>
         </div>
 
         {{ govukButton({

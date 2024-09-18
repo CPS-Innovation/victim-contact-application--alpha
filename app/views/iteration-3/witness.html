@@ -855,7 +855,7 @@
                         <dt class="govuk-summary-list__key">
                           Meeting attendees
                         </dt>
-                        <dd class="govuk-summary-list__value">
+                        <dd class="govuk-summary-list__value meetingattendeesdata">
                           {{ data['meeting-attendees'] }}
                         </dd>
                         <dd class="govuk-summary-list__actions">
@@ -890,9 +890,10 @@
                         <dt class="govuk-summary-list__key">
                           Meeting attendees
                         </dt>
-                        <dd class="govuk-summary-list__value">
-                        {{ data['invitess-attended'] }} <br>
-                        Chairperson: {{ data['meeting-chair'] }}
+                        <dd class="govuk-summary-list__value meetingattendeesdata">
+                        <strong>Chair person: {{ data['meeting-chair'] }} </strong><br>
+                        {{ data['invitess-attended'] }} 
+        
                         </dd>
                         <dd class="govuk-summary-list__actions">
                           <a class="govuk-link" href="meeting-outcome/p-3-attendees">Change<span class="govuk-visually-hidden"> name</span></a>

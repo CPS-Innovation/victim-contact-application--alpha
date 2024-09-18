@@ -15,42 +15,44 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
+      <h1 class="govuk-heading-l">Who will attend the meeting?</h1>
       <form class="form" action="p4-special-measures" method="post">
 
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <h1 class="govuk-fieldset__heading">
-                Who will attend the meeting?
-              </h1>
-            </legend>
-            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="organisation" name="meeting-attendees" type="checkbox" value="Jamie Smith - Police">
-                <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                  <strong>Jamie Smith</strong> - Police
-                </label>
-              </div>
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="organisation-2" name="meeting-attendees" type="checkbox" value="Bashir Abdi - CPS, RSSO">
-                <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
-                  <strong>Bashir Abdi</strong> - CPS, RSSO
-                </label>
-              </div>
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="organisation-3" name="meeting-attendees" type="checkbox" value="Adelia Hand - Victim">
-                <label class="govuk-label govuk-checkboxes__label" for="organisation-3">
-                  <strong>Adelia Hand</strong> - Victim
-                </label>
-              </div>
-            </div>
-            ADD CHAIR PERSON
-          </fieldset>
-            <div class="lightgrey">
-            <p class="govuk-body">Please add anyone else who attended the meeting</p>
-            <button class="govuk-button govuk-button--secondary">Add another</button>
+       <!-- <ul id="invitee-list"></ul>-->
+        <dl class="govuk-summary-list" id="invitee-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dt class="govuk-summary-list__key">
+              Role
+            </dt>
+            <dt class="govuk-summary-list__key">
+              Chair person
+            </dt>
           </div>
+
+        </dl>
+        <textarea name="meeting-attendees" id="hideinvitees"></textarea>
+        <div class="lightgrey">
+          <div id="show-add-more-fields">
+            <div id="add-more-invitees">
+              <div class="add-invitee-item">
+                <label class="govuk-label" for="width-10">
+                  Name
+                </label>
+               <input class="govuk-input" id="width-10" name="invitee--name" type="text">
+              </div>
+              <div class="add-invitee-item">
+                <label class="govuk-label" for="width-10">
+                  Role
+                </label>
+               <input class="govuk-input" id="width-10" name="invitee--role" type="text">
+              </div>         
+            </div>
+            <div class="govuk-button" id="addinviteeaction">Add invitee</div>
+          </div>
+          <div class="govuk-button govuk-button--secondary" id="toggle-add">Add meeting invitee</div>
         </div>
 
         {{ govukButton({
