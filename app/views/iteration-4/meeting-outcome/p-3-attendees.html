@@ -1,0 +1,90 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="p-4-actions-agreed" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Which of the meeting invitees attended the meeting?
+              </h1>
+            </legend>
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="organisation" name="invitess-attended" type="checkbox" value="Jamie Smith - Police">
+                <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                  <strong>Jamie Smith</strong> - Police
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="organisation-2" name="invitess-attended" type="checkbox" value="Bashir Abdi - CPS, RSSO">
+                <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                  <strong>Bashir Abdi</strong> - CPS, RSSO
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="organisation-3" name="invitess-attended" type="checkbox" value="Adelia Hand - Victim">
+                <label class="govuk-label govuk-checkboxes__label" for="organisation-3">
+                  <strong>Adelia Hand</strong> - Victim
+                </label>
+              </div>
+            </div>
+  
+
+          </fieldset>
+            <div class="lightgrey">
+              <div id="show-add-more-fields">
+                <div id="add-more-invitees">
+                  <div class="add-invitee-item">
+                    <label class="govuk-label" for="width-10">
+                      Name
+                    </label>
+                   <input class="govuk-input govuk-input--width-10" id="width-10" name="invitee--name" type="text">
+                  </div>
+                  <div class="add-invitee-item">
+                    <label class="govuk-label" for="width-10">
+                      Role
+                    </label>
+                   <input class="govuk-input govuk-input--width-10" id="width-10" name="invitee--role" type="text">
+                  </div>
+                  <div class="add-invitee-item">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="nationality" name="invitee-chairperson" type="checkbox" value="british" aria-describedby="nationality-item-hint">
+                      <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                        Chair person
+                      </label>
+                    </div>
+                  </div>           
+                </div>
+                <div class="govuk-button" id="addinviteeaction">Add invitee</div>
+              </div>
+              <div class="govuk-button govuk-button--secondary" id="toggle-add">Add another</div>
+            </div>
+        </div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Who will attend the meeting?</h1>
+      <form class="form" action="p4-special-measures" method="post">
+
+       <!-- <ul id="invitee-list"></ul>-->
+        <dl class="govuk-summary-list" id="invitee-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dt class="govuk-summary-list__key">
+              Role
+            </dt>
+            <dt class="govuk-summary-list__key">
+              Chair person
+            </dt>
+          </div>
+
+        </dl>
+        <textarea name="meeting-attendees" id="hideinvitees"></textarea>
+        <div class="lightgrey">
+          <div id="show-add-more-fields">
+            <div id="add-more-invitees">
+              <div class="add-invitee-item">
+                <label class="govuk-label" for="width-10">
+                  Name
+                </label>
+               <input class="govuk-input" id="width-10" name="invitee--name" type="text">
+              </div>
+              <div class="add-invitee-item">
+                <label class="govuk-label" for="width-10">
+                  Role
+                </label>
+               <input class="govuk-input" id="width-10" name="invitee--role" type="text">
+              </div>         
+            </div>
+            <div class="govuk-button" id="addinviteeaction">Add invitee</div>
+          </div>
+          <div class="govuk-button govuk-button--secondary" id="toggle-add">Add meeting invitee</div>
+        </div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

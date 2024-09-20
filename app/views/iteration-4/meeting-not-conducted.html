@@ -1,0 +1,37 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+       Why was the meeting not conducted?
+      </h1>
+
+      <form class="form" action="witness#contacts" method="post">
+
+        <div class="govuk-form-group">
+  
+     
+          <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+        </div>
+
+        <button class="govuk-button">Rebook another meeting</button>   <a href="" class="govuk-button govuk-button--warning">Cancel the meeting</a>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
