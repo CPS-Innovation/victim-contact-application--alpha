@@ -242,6 +242,11 @@
     padding-left: 0px;
 }
 
+.disabledbutton {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
 
 .lightgrey {
   background: #f8f8f88f;

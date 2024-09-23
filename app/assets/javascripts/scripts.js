@@ -121,6 +121,44 @@ $(document).ready(function() {
   //defaults
   $('.button-set, #contacts .govuk-notification-banner').hide();
 
+  //ACCEPTED
+  $('#victimresp-yes, #victimresp-yes-2').click(function(){
+    localStorage.setItem("victimresponse", "accepted");  
+    $('#contacts .govuk-notification-banner__heading').text('Victim response updated');
+    $('.moj-ticket-panel, .loop, .no-response, #victimresp-no-2').hide();
+    $('.button-set, .acceptedmeeting, #contacts .govuk-notification-banner, .loop2').show();
+
+    localStorage.setItem('dtmstatus','loop1');
+    $('.legacy-loop').hide(); 
+    $('.legacy-loop-1, .legacy-heading').show(); 
+    $('#victimresp-yes, #victimresp-yes-2').hide();
+  });
+
+  //DECLINED
+  $('#victimresp-no, #victimresp-no-2').click(function(){
+    localStorage.setItem("victimresponse", "declined");  
+    $('#contacts .govuk-notification-banner__heading').text('Victim response updated');
+    $('.moj-ticket-panel, .loop, .acceptedmeeting, #acceptedmeeting, #victimresp-no-2').hide();
+    $('.acceptedmeeting, .add-meeting-notes-button').hide();
+    $('.start-cat1, .button-set, #contacts .govuk-notification-banner, .loop2, .legacy-heading').show();
+
+    localStorage.setItem('dtmstatus','loop1');
+    $('.legacy-loop').hide(); 
+    $('.legacy-loop-1, .legacy-heading, .button-set').show(); 
+  });
+  
+  $('#victimresp-no-response').click(function(){
+    localStorage.setItem("victimresponse", "no-response");  
+    //no response
+    $('#contacts .govuk-notification-banner__heading').text('Awaiting victim response');
+    $('.moj-ticket-panel, .loop, .acceptedmeeting, .add-meeting-notes-button').hide();
+    $('.button-set, #contacts .govuk-notification-banner, .loop2, .no-response, #acceptedmeeting').show();
+    
+    localStorage.setItem('dtmstatus','loop1');
+    $('.legacy-loop').hide(); 
+    $('.legacy-loop-1, .legacy-heading').show(); 
+  });
+
   $('#contacts').each(function(){
     var responsestatus = localStorage.getItem('victimresponse');
     
@@ -134,7 +172,7 @@ $(document).ready(function() {
     }
     if(responsestatus == 'no-response') {
       $('.acceptedmeeting, .declinemeeting').hide();
-      $('.no-response').show();
+      $('.no-response, .no-response').show();
       console.log('no-response');
     }
     if(responsestatus == '') {
@@ -238,7 +276,7 @@ $('#closemnotification').click(function(){
   if (referrer.indexOf("p1-what-was-the-victim-response") > -1) { 
     //accepted offer
     $('#contacts .govuk-notification-banner__heading').text('Victim response updated');
-    $('.moj-ticket-panel, .loop').hide();
+    $('.moj-ticket-panel, .loop, #victimresp-yes, #victimresp-no-2').hide();
     $('.button-set, .acceptedmeeting, #contacts .govuk-notification-banner, .loop2').show();
 
     localStorage.setItem('dtmstatus','loop1');
@@ -249,35 +287,46 @@ $('#closemnotification').click(function(){
   $('#shownewrole').click(function(){
     $('#add-role').show();
   });
+
+  $('#recordanotherattempt-2').click(function(){
+    localStorage.setItem('victimcontactattempts','1');
+  });
+
   //no response
   $('.attempt-3').hide();
+  $('#dashboard').each(function(){
+    localStorage.setItem('victimcontactattempts','0');
+  });
+
   var checkattempts = localStorage.getItem('victimcontactattempts');
 
   if (checkattempts == 3) {
     $('.numberofattempts').text('3 attempts');
-    $('#recordanotherattempt').hide();
-    $('.attempt-3').show();
+    $('.govuk-notification-banner__heading').text('Victim has been contacted 3 times with no response');
+    $('#recordanotherattempt, #recordanotherattempt-2').hide();
+    $('.attempt-3, #accepted-but-cancel-meeting, #cancel-meeting-btn').show();
     //alert('attempt 3');
     $('#recordanotherattempt').hide();
   }
 
   if (checkattempts == 2) {
     $('.numberofattempts').text('2 attempts');
-    $('#recordanotherattempt').click(function(){
+    $('#recordanotherattempt-2').click(function(){
       localStorage.setItem('victimcontactattempts','3');
+      $('#sla-window').text('1 July 2024');
     });
   }
   if (checkattempts == 1) {
-    $('.numberofattempts').text('1 attempts');
-    $('#recordanotherattempt').click(function(){
+    $('.numberofattempts').text('1 attempt');
+    $('#recordanotherattempt-2').click(function(){
       localStorage.setItem('victimcontactattempts','2');
+       $('#sla-window').text('21 June 2024');
     });
   } 
-  if (checkattempts < 1) {
-    $('#recordanotherattempt').click(function(){
-      $('.numberofattempts').text('2 attempts');
-      var incrimentAttempts =  localStorage.getItem('victimcontactattempts');
-      localStorage.setItem('victimcontactattempts','2');
+  if (checkattempts == 0) {
+    $('#recordanotherattempt-2').click(function(){
+      localStorage.setItem('victimcontactattempts','1');
+      $('#sla-window').text('1 June 2024');
     });
   }
   //count number of attempts to contact victim
@@ -285,7 +334,7 @@ $('#closemnotification').click(function(){
   if (referrer.indexOf("p1-record-no-response") > -1) { 
    //no response
     $('#contacts .govuk-notification-banner__heading').text('Awaiting victim response');
-    $('.moj-ticket-panel, .loop, .acceptedmeeting, .add-meeting-notes-button').hide();
+    $('.moj-ticket-panel, .loop, .acceptedmeeting, .add-meeting-notes-button, #accepted-but-cancel-meeting').hide();
     $('.button-set, #contacts .govuk-notification-banner, .loop2').show();
     
     localStorage.setItem('dtmstatus','loop1');
@@ -295,8 +344,8 @@ $('#closemnotification').click(function(){
 
   if (referrer.indexOf('p4-reason-declined') > -1) {
     $('#contacts .govuk-notification-banner__heading').text('Victim response updated');
-    $('.moj-ticket-panel, .loop, .acceptedmeeting, #acceptedmeeting').hide();
-    $('.acceptedmeeting, .add-meeting-notes-button').hide();
+    $('.moj-ticket-panel, .loop, .acceptedmeeting, #acceptedmeeting, #accepted-but-cancel-meeting').hide();
+    $('.acceptedmeeting, .add-meeting-notes-button, #victimresp-no-2').hide();
     $('.start-cat1, .button-set, #contacts .govuk-notification-banner, .loop2, .legacy-heading').show();
 
     localStorage.setItem('dtmstatus','loop1');
