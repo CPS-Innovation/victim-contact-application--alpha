@@ -1,0 +1,46 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Provide any information about the attempt to contact with the victim
+      </h1>
+
+      <form class="form" action="../witness#contacts" method="post">
+        <div class="govuk-form-group">
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="event-name">
+              When was an attempt made to contact the vitim?
+            </label>
+            <input class="govuk-input govuk-!-width-one-quarter" id="event-name" name="attempted-victim-contact" type="date">
+          </div>
+          <div id="more-detail-hint" class="govuk-hint">
+            Please provide any information about the attempt to contact the victim
+          </div>
+          <textarea class="govuk-textarea" id="more-detail" name="notes-attempted-victim-contact" rows="5" aria-describedby="more-detail-hint"></textarea>
+        </div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

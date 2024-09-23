@@ -1,0 +1,1142 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="utilitymenu">
+  <div id="logindeets">
+    <div class="govuk-body">Sarah Lloyd</div><div class="govuk-body"><a href="#" class="govuk-link">Logout</a></div>
+  </div>
+</div>
+<a href="index" class="govuk-back-link witness-details-home">Back to search</a>
+<br><br>
+
+
+<main class="govuk-main-wrapper" id="wittness">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">Adelia Hand</h1>
+      <p class="govuk-caption-m">Case URN:  <span id="caseurn"></span></p>
+
+          <strong class="govuk-tag sb-l">L - Vulnerable</strong>
+
+          <strong class="govuk-tag sb-t">T - Intimidated</strong>
+
+      <br><br><br><br>
+      
+      <div class="govuk-tabs" data-module="govuk-tabs">
+        <h2 class="govuk-tabs__title">
+          Contents
+        </h2>
+        <ul class="govuk-tabs__list">
+
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#personal">
+              Victim details
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#overview">
+              Case overview
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#cpsdetails">
+              Case contacts
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#offence-trial-charge">
+              Charges, counts and trials
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#contacts">
+              Victim communication
+            </a>
+          </li>
+        </ul>
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="overview">
+          <h2 class="govuk-heading-l">Case overview</h2>
+          <div class="top-section">
+            <span class="govuk-caption-m last-edit">Last synced: 
+              <span class="govuk-!-font-weight-bold">01 August 2024</span>
+            </span>
+            </div>
+          <div class="progress-container">
+            <div class="step active">
+                <div class="step-title">
+                    <p style="font-weight:700; margin-bottom:0px">Charge</p>
+                    <p style="padding:0; margin:0">-</p>
+                </div>
+                <div class="indicator">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="12" y1="12" x2="12" y2="7"></line>
+                        <line x1="12" y1="12" x2="8" y2="12"></line>
+                    </svg>
+                </div>
+            </div>
+            <div class="step double-indicator">
+                <div class="step-title">
+                    <p style="margin-bottom:0px">Disclosure / First Hearing</p>
+                    <p style="padding:0; margin:0">-</p>
+                </div>
+                <div style="display: flex;">
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                </div>
+            </div>
+            <div class="step double-indicator">
+                <div class="step-title">
+                    <p style="margin-bottom:0px">PTPH / Trial</p>
+                    <p style="padding:0; margin:0">-</p>
+                </div>
+                <div style="display: flex;">
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-title">
+                    <p style="margin-bottom:0px">Sentence</p>
+                    <p style="padding:0; margin:0">-</p>
+                </div>
+                <div class="indicator"></div>FP
+            </div>
+          </div>
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-half">
+              <div class="moj-timeline-wrapper">
+              <h2 class="govuk-headng-m">Case timeline</h2>
+              <label class="govuk-label" for="width-10">
+                Search timeline
+              </label>
+              <input class="govuk-input govuk-input--width-20" id="searchtimeline" name="width20" type="text">
+              <div class="moj-timeline section-row">
+                <div class="moj-timeline__item">
+                  <div class="moj-timeline__header">
+                      <h2 tint="GREEN" class="moj-timeline__title">Introduction letter sent</h2>
+                      <p class="moj-timeline__byline" style="margin-left: 0.5em;">updated by Joe Bloggs</p>
+                  </div>
+                  <p class="moj-timeline__date">
+                      <time>Sunday, March 26, 2024 1:58 PM</time>
+                  </p>
+                  <div class="moj-timeline__description">
+                      <ul class="moj-timeline__documents">
+                          <li class="moj-timeline__document-item">
+                              <a class="govuk-link" href="#">
+                                  <svg class="moj-timeline__document-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" width="20" height="16">
+                                      <path d="M9 7V1.5L14.5 7H9zM2 0C.9 0 0 .9 0 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V6l-6-6H2z"></path>
+                                  </svg>Introduction letter.pdf</a>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+                <div class="moj-timeline__item">
+                    <div class="moj-timeline__header">
+                        <h2 class="moj-timeline__title">Charge Decision</h2><strong class="govuk-tag">Update</strong></div>
+                    <p class="moj-timeline__date">
+                        <time>Saturday, February 6, 2024 4:21 AM</time>
+                    </p>
+                </div>
+
+                <div class="moj-timeline__item">
+                  <div class="moj-timeline__header">
+                      <h2 class="moj-timeline__title">Plea and Trial Preparation Hearing</h2><strong class="govuk-tag">Update</strong></div>
+                  <p class="moj-timeline__date">
+                      <time>Monday, August 11, 2024 11:39 PM</time>
+                  </p>
+                </div>
+                <div class="moj-timeline__item">
+                      <div class="moj-timeline__header">
+                          <h2 class="moj-timeline__title">Date of Offences</h2><strong class="govuk-tag">Update</strong></div>
+                      <p class="moj-timeline__date">
+                          <time>Monday, January 8, 2024 2:55 PM</time>
+                      </p>
+                  </div>       
+                </div>
+              </div>
+            </div>
+            <div class="govuk-grid-column-one-half">
+              
+                <div class="overview-panel">
+                  <div class="overview-panel-header">Case status</div>
+                  <div class="overview-panel-body">
+                    28 day PCD Review<br>
+                    The case is awaiting a charging decision
+                  </div>
+                </div>
+                <div class="overview-panel">
+                  <div class="overview-panel-header">Victim documents</div>
+                  <div class="overview-panel-body">
+                    <table class="govuk-table">
+                      <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                          <th scope="col" class="govuk-table__header">Document</th>
+                          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Date added</th>
+                        </tr>
+                      </thead>
+                      <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header"><a href="#" class="pdf-link" download>Detailed needs assessment</a></th>
+                          <td class="govuk-table__cell govuk-table__cell--numeric">01 August 2024</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header"><a href="#" class="pdf-link" download>Dash assessment</a></th>
+                          <td class="govuk-table__cell govuk-table__cell--numeric">21 July 2024</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header"><a href="#" class="pdf-link" download>Duty to meet letter</a></th>
+                          <td class="govuk-table__cell govuk-table__cell--numeric">17 July 2024</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header"><a href="#" class="pdf-link" download>MG2</a></th>
+                          <td class="govuk-table__cell govuk-table__cell--numeric">21 July 2024</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header"><a href="#" class="pdf-link" download>Introduction letter</a></th>
+                          <td class="govuk-table__cell govuk-table__cell--numeric">17 July 2024</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="personal">
+          <div class="top-section">          
+            <div class="govuk-grid-row">
+              <div class="tabholder govuk-grid-column-one-quarter">
+                <div class="sidetab activetab govuk-link govuk-link--no-underline" id="tab1">Victim details</div>
+                <div class="sidetab govuk-link govuk-link--no-underline" id="tab2">Contact preferences</div>
+              </div>
+              <div class="tabholdercontent govuk-grid-column-three-quarters">
+                <div class="sidetabcontent activetab" id="tabcontent1">
+                  <!-- -->
+                  <h2 class="govuk-heading-l">Victim details</h2>
+                  <span class="govuk-caption-m last-edit">Edited: 
+                    <span class="govuk-!-font-weight-bold">01 August 2024</span> by
+                    <span class="govuk-!-font-weight-bold">Jog Bloggs</span>  
+                  </span>  
+                  <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
+                        <th scope="col" class="govuk-table__header govuk-!-width-two-quarters"></th>
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
+                      </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Name Preference</th>
+                        <td class="govuk-table__cell"> Mrs Adelia Hand</td>
+                        <td class="govuk-table__cell"></td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Date of Birth</th>
+                        <td class="govuk-table__cell">17/09/1944</td>
+                        <td class="govuk-table__cell"></td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Age</th>
+                        <td class="govuk-table__cell">79</td>
+                        <td class="govuk-table__cell"></td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Victim's address</th>
+                        <td class="govuk-table__cell">
+                          130 Denton Avenue,<br>
+                          Banton,<br>
+                          Dunbartonshire,<br>
+                          Scotland,<br>
+                          G65 0QR
+                        </td>
+                        <td class="govuk-table__cell"></td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Power of attorney</th>
+                        <td class="govuk-table__cell">Paul Smith<br>
+                          130 Denton Avenue,<br>
+                          Banton,<br>
+                          Dunbartonshire,<br>
+                          Scotland,<br>
+                          G65 0QR<br>
+                          (tel) +44 786958675
+                        </td>
+                        <td class="govuk-table__cell"><a href="">Change</a></td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Special Measures</th>
+                        <td class="govuk-table__cell">Privacy screen
+                        </td>
+                        <td class="govuk-table__cell"><a href="">Change</a></td>
+                      </tr>              
+                    </tbody>
+                  </table>
+                  <!-- -->
+                </div>
+                <div class="sidetabcontent" id="tabcontent2">
+                 <!-- -->
+                  <h2 class="govuk-heading-l">Contact preferences</h2>
+                  <span class="govuk-caption-m last-edit">Edited: 
+                    <span class="govuk-!-font-weight-bold">01 August 2024</span> by
+                    <span class="govuk-!-font-weight-bold">Jog Bloggs</span>  
+                  </span>  
+                  <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
+                        <th scope="col" class="govuk-table__header govuk-!-width-two-quarters"></th>
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
+                      </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Preferred method of contact</th>
+                        <td class="govuk-table__cell">Letter</td>
+                        <td class="govuk-table__cell"><a href="">Change</a></td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Mobile</th>
+                        <td class="govuk-table__cell">+44 7044234787</td>
+                        <td class="govuk-table__cell"><a href="">Change</a></td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Landline</th>
+                        <td class="govuk-table__cell">+44 1926963051</td>
+                        <td class="govuk-table__cell"><a href="">Change</a></td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Email</th>
+                        <td class="govuk-table__cell">Dortha.Runolfsdottir6@hotmail.com</td>
+                        <td class="govuk-table__cell"><a href="">Change</a></td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Preferred contact times</th>
+                        <td class="govuk-table__cell">
+                          9am -12pm <br>
+                          1pm - 5pm <br>
+                          Not Mondays
+                        </td>
+                        <td class="govuk-table__cell"><a href="">Change</a></td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Preferred language</th>
+                        <td class="govuk-table__cell">English</td>
+                        <td class="govuk-table__cell"><a href="">Change</a></td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">SCN / reasonable adjustments</th>
+                        <td class="govuk-table__cell">
+                          None<br><br>
+                          <a href="" class="pdf-link">View needs assessment</a>
+                          <td class="govuk-table__cell"><a href="">Change</a></td>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <!-- -->
+                </div>
+              </div>
+            </div>
+         </div>        
+        </div>
+
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="cpsdetails">
+          <div class="top-section">
+            <div class="govuk-grid-row">
+              <div class="tabholder govuk-grid-column-one-quarter">
+                <div class="sidetab activetab govuk-link govuk-link--no-underline" id="tab3">CPS contacts</div>
+                <div class="sidetab govuk-link govuk-link--no-underline" id="tab4">Other contacts</div>
+              </div>
+              <div class="tabholdercontent govuk-grid-column-three-quarters">
+                <div class="sidetabcontent" id="tabcontent9">
+   
+                </div>
+                <div class="sidetabcontent" id="tabcontent10">
+   
+                </div>
+                <div class="sidetabcontent activetab" id="tabcontent3">
+                  <h2 class="govuk-heading-l">CPS contacts</h2>
+                  <span class="govuk-caption-m last-edit">Edited: 
+                    <span class="govuk-!-font-weight-bold">01 August 2024</span> by
+                    <span class="govuk-!-font-weight-bold">Jog Bloggs</span>  
+                  </span>
+                  <a class="govuk-button" href="new-cps-contact">Add another CPS contact</a>
+                  <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-fifth">Role</th>
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-fifth">Name</th>
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-fifth">Email address</th>
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-fifth">Telephone number</th>
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-fifth">Address</th>
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-fifth"></th>
+                      </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Paralegal</th>
+                        <td class="govuk-table__cell">Michael Collins</td>
+                        <td class="govuk-table__cell"><a href="mailto:a.obayemi@swp.gov.uk">@cwp.gov.uk</a></td>
+                        <td class="govuk-table__cell">+44 1792354647</td>
+                        <td class="govuk-table__cell">
+                          PO BOX 3245<br>
+                          Bristol<br>
+                          BS2 2EH<br>
+                          England<br></td>
+                          <td class="govuk-table__cell"><a href="#">Change</a>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">VLU</th>
+                        <td class="govuk-table__cell">Michael Collins</td>
+                        <td class="govuk-table__cell"><a href="mailto:a.obayemi@swp.gov.uk">@cwp.gov.uk</a></td>
+                        <td class="govuk-table__cell">+44 1792354647</td>
+                        <td class="govuk-table__cell">        
+                          PO BOX 3245<br>
+                          Bristol<br>
+                          BS2 2EH<br>
+                          England<br></td>
+                          <td class="govuk-table__cell"><a href="#">Change</a>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Prosecutor</th>
+                        <td class="govuk-table__cell">Michael Collins</td>
+                        <td class="govuk-table__cell"><a href="mailto:a.obayemi@swp.gov.uk">@cwp.gov.uk</a></td>
+                        <td class="govuk-table__cell">+44 1792354647</td>
+                        <td class="govuk-table__cell">        PO BOX 3245<br>
+                          Bristol<br>
+                          BS2 2EH<br>
+                          England<br></td>
+                          <td class="govuk-table__cell"><a href="#">Change</a>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="sidetabcontent activetab" id="tabcontent4">
+                  <h2 class="govuk-heading-l">Other contacts</h2>
+                  <span class="govuk-caption-m last-edit">Edited: 
+                    <span class="govuk-!-font-weight-bold">01 August 2024</span> by
+                    <span class="govuk-!-font-weight-bold">Jog Bloggs</span>  
+                  </span>
+                  <h3 class="govuk-heading-m">Police officer in charge</h3>
+                  <a href="" class="pdf-link">View police notes</a>
+                  <table class="govuk-table m-t-20">
+                    <thead class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-fifth">Name</th>
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-fifth">Collar number</th>
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-fifth">Email address</th>
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-fifth">Telephone number</th>
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-fifth"></th>
+                      </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">PC Jane Fisher</th>
+                        <td class="govuk-table__cell">689694324</td>
+                        <td class="govuk-table__cell"><a href="mailto:a.obayemi@swp.gov.uk">jane.fisher@swp.gov.uk</a></td>
+                        <td class="govuk-table__cell">+44 1792354647</td>
+                        <td class="govuk-table__cell"><a href="#">Change</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <br>
+                  <h3 class="govuk-heading-m">Counsel</h3>
+                  <table class="govuk-table m-t-20">
+                    <thead class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-fifth">Name</th>
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-fifth">Email address</th>
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-fifth">Telephone number</th>
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-fifth"></th>
+                      </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Andrew Price</th>
+                        <td class="govuk-table__cell"><a href="mailto:a.obayemi@swp.gov.uk">a.prince@slegal.uk</a></td>
+                        <td class="govuk-table__cell">+44 1792354647</td>
+                        <td class="govuk-table__cell"><a href="#">Change</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <h3 class="govuk-heading-m">Witness care officer</h3>
+                  <a href="" class="pdf-link">View victim care notes</a>
+                  <table class="govuk-table m-t-20">   
+                    <thead class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Name</th>
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Email address</th>
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Telephone number</th>
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
+                      </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Ade Obayemi</th>
+                        <td class="govuk-table__cell"><a href="mailto:a.obayemi@swp.gov.uk">a.obayemi@swp.gov.uk</a></td>
+                        <td class="govuk-table__cell">+44 1792354647</td>
+                        <td class="govuk-table__cell"><a href="#" class="">Change</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <h3 class="govuk-heading-m">ISVA</h3>
+                  <span class="govuk-caption-m last-edit">Edited: 
+                    <span class="govuk-!-font-weight-bold">01 August 2024</span> by
+                    <span class="govuk-!-font-weight-bold">Jog Bloggs</span>  
+                  </span>
+                  <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-fifth">Name</th>
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-fifth">Email address</th>
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-fifth">Telephone number</th>
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-fifth">Address</th>
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-fifth"></th>
+                      </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Aaliyah Abaya</th>
+                        <td class="govuk-table__cell"><a href="mailto:a.obayemi@swp.gov.uk">a.abaya@cps.gov.uk</a></td>
+                        <td class="govuk-table__cell">+44 1792354647</td>
+                        <td class="govuk-table__cell">    
+                          PO BOX 3245<br>
+                          Bristol<br>
+                          BS2 2EH<br>
+                          England<br></td>
+                          <td class="govuk-table__cell"><a href="#">Change</a>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <h3 class="govuk-heading-m">IDVA</h3>
+                  <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-fifth">Name</th>
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-fifth">Email address</th>
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-fifth">Telephone number</th>
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-fifth">Address</th>
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-fifth"></th>
+                      </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Michael Collins</th>
+                        <td class="govuk-table__cell"><a href="mailto:a.abaya@cps.gov.uk">m.collins@cps.gov.uk</a></td>
+                        <td class="govuk-table__cell">+44 1792354647</td>
+                        <td class="govuk-table__cell">PO BOX 3245<br>
+                          Bristol<br>
+                          BS2 2EH<br>
+                          England<br></td>
+                          <td class="govuk-table__cell"><a href="#">Change</a>
+                      </tr> 
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+           </div>
+        </div>
+
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="offence-trial-charge">
+          <div class="top-section">
+            <h2 class="govuk-heading-l">Charges, counts and trials</h2> 
+          </div>
+          <br><br>
+          <div class="tabholder govuk-grid-column-one-quarter">
+            <div class="sidetab activetab govuk-link govuk-link--no-underline" id="tab21">Charges and counts</div>
+            <div class="sidetab govuk-link govuk-link--no-underline" id="tab22">Trials</div>
+          </div>
+          <div class="tabholdercontent govuk-grid-column-three-quarters">
+            <div class="sidetabcontent activetab" id="tabcontent21">
+              <h3 class="govuk-heading-m">Charges and counts</h3>
+              <div class="charge-wrapper">
+              <h4 class="govuk-heading-s"><strong class="govuk-tag">Charge:</strong>   Assault occasioning actual bodily harm</h4>
+                <table class="govuk-table govuk-table--small-text-until-tablet">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header govuk-!-width-one-fifth">Offence date</th>
+                      <th scope="col" class="govuk-table__header govuk-!-width-one-fifth">Count</th>
+                      <th scope="col" class="govuk-table__header govuk-!-width-two-fifths">Description</th>
+                      <th scope="col" class="govuk-table__header govuk-!-width-one-fifth">Plea</th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">02/09/2024</td>
+                      <td class="govuk-table__cell">Count 1</td>
+                      <td class="govuk-table__cell govuk-!-font-weight-bold">Violent disorder</td>
+                      <td class="govuk-table__cell">Not guilty</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">02/09/2024</td>
+                      <td class="govuk-table__cell">Count 2</td>
+                      <td class="govuk-table__cell govuk-!-font-weight-bold">Wounding with intent to do grievous bodily harm</td>
+                      <td class="govuk-table__cell">Not guilty</td>
+                    </tr>
+  
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="sidetabcontent activetab" id="tabcontent22">
+              <h3 class="govuk-heading-m">Trials</h3>
+              <table class="govuk-table govuk-table--small-text-until-tablet">
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-fifth">Hearings</th>
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-fifth">Date</th>
+                    <th scope="col" class="govuk-table__header govuk-!-width-two-fifths">Location</th>
+                  </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-weight-bold">PTPH hearing</td>
+                    <td class="govuk-table__cell">10 January 2024</td>
+                    <td class="govuk-table__cell">Croydon Crown Nightingale Court</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-weight-bold">Hearing offer</td>
+                    <td class="govuk-table__cell">7 January 2024</td>
+                    <td class="govuk-table__cell">Croydon Crown Nightingale Court</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-weight-bold">Hearing plea</td>
+                    <td class="govuk-table__cell">19 December 2023</td>
+                    <td class="govuk-table__cell">Croydon Crown Nightingale Court</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-!-font-weight-bold">Hearing first hearing</td>
+                    <td class="govuk-table__cell">10 December 2023</td>
+                    <td class="govuk-table__cell">Croydon Crown Nightingale Court</td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+          </div>    
+        </div>
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="contacts">
+          <h2 class="govuk-heading-l">Victim communication</h2>
+    
+          <article class="moj-ticket-panel meeting-not-set" aria-label="Sub navigation 1">
+            <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+              <h2 class="govuk-heading-m">There is no victim contact information for this victim</h2>
+             <a href="category1/p1-select-category" class="govuk-button">Create victim contact</a>
+            </section>   
+          </article>   
+
+
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                  <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+                    <div class="govuk-notification-banner__header">
+                    </div>
+                    <div class="govuk-notification-banner__content">
+                      <p class="govuk-notification-banner__heading">
+                        Victim contact details updated
+                      </p>
+                      <button class="govuk-button govuk-button--secondary" id="closemnotification">Close</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="govuk-grid-column-two-thirds">
+
+                  <div class="loop loop1">
+                    <!-- create DtM -->
+                    <h3 class="govuk-heading-m">Duty to meet</h3>
+
+                    <!--Vitim response-->
+                    <dl class="govuk-summary-list">
+                      <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+                        <dt class="govuk-summary-list__key">
+                          Victim response to meeting offer
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          <strong class="govuk-tag govuk-tag--blue">
+                            No response
+                          </strong>
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+                        <dt class="govuk-summary-list__key">
+                          Victim must be contacted before
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                           <strong>1 June 2024</strong>
+                        </dd>
+                      </div>
+                    </dl>
+
+                    <h4 class="govuk-heading-s">Add victims response to offer</h4>
+                    <a href="witness#contacts" id="victimresp-yes" class="govuk-button">Victim has accepted</a>
+                    <a href="category1-part-2/p4-reason-declined" id="victimresp-no" class="govuk-button govuk-button--warning">Victim has declined</a>
+                    <a href="category1-part-2/p1-record-no-response" id="victimresp-no-response" class="govuk-button govuk-button--secondary">Enter a no response</a>
+                    <a href="category1/p1-select-category" class="govuk-button" id="arrnaneg-new-meeting">Arrange a new meeting</a>
+                    <a href="cancel-meeting" class="govuk-button govuk-button--warning hide" id="cancel-meeting-btn">Cancel meeting</a>
+
+                    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+                    <h3 class="govuk-heading-m">Duty to meet offer</h3>
+                    <dl class="govuk-summary-list govuk-!-margin-bottom-6">
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Is the victim eligible for duty to meet
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          {{ data['eligible'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="category1/p2-eligible">Change<span class="govuk-visually-hidden"> name</span></a>
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Has the victim been offered a meeting?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          {{ data['hasmeetingbeenofferred'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="category1/p3-has-the-victim-been-offered-meeting">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          How was the meeting offer made to the victim?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          {{ data['howwasthemeetingoffered'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="category1/p3-has-the-victim-been-offered-meeting.html">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          When was the meeting offered to the victim?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          {{ data['whenoffered'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="category1/p3-has-the-victim-been-offered-meeting.html">Change<span class="govuk-visually-hidden"> customer reference</span></a>
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Offer letter
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          <a href="" download>{{ data['fileUpload1'] }}</a>
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
+                        </dd>
+                      </div>
+                    </dl>
+                    
+                  </div>
+
+                  <div class="loop loop2">
+                    <!-- victim response ACCEPT -->
+                    <h2 class="govuk-heading-m acceptedmeeting">Victim response to meeting offer</h2>
+                    <dl class="govuk-summary-list govuk-!-margin-bottom-6 acceptedmeeting" id="acceptedmeeting">
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Victim response to duty to meet
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          <strong class="govuk-tag govuk-tag--green">
+                            Accepted
+                          </strong>
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="category1-part-2/p1-what-was-the-victim-response">Change<span class="govuk-visually-hidden"> name</span></a>
+                        </dd>
+                      </div>
+                    </dl>
+
+                    <h2 class="govuk-heading-m no-response">Victim response to meeting offer</h2>
+                    <dl class="govuk-summary-list govuk-!-margin-bottom-6  no-response" id="acceptedmeeting">
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Victim response to meeting offer
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          <strong class="govuk-tag govuk-tag--blue">
+                            No response
+                          </strong>
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Victim to be contacted by
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          <strong id="sla-window">1 June 2024</strong>
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                       </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                         Number of attempts to contact victim
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            <strong class="numberofattempts">1 attempt</strong>
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                       </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          When was the attempt to contact the victim?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['attempted-victim-contact'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="category1-part-2/p1-record-no-response">Change<span class="govuk-visually-hidden"> name</span></a>
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Contact attempt notes
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          {{ data['notes-attempted-victim-contact'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="category1-part-2/p1-record-no-response">Change<span class="govuk-visually-hidden"> name</span></a>
+                        </dd>
+                      </div>
+                    </dl>
+                    
+                    <!-- victim response DECLINE -->
+                    <h2 class="govuk-heading-m declinemeeting">Victim response to meeting offer</h2>
+                    <dl class="govuk-summary-list govuk-!-margin-bottom-6 declinemeeting" id="declinemeeting">
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Victim response to meeting offer
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          <strong class="govuk-tag govuk-tag--red">
+                            Declined
+                          </strong>
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="category1-part-2/p1-what-was-the-victim-response">Change<span class="govuk-visually-hidden"> name</span></a>
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Date meeting was declined?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          {{ data['datedeclined'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="category1-part-2/p2-offer-accepted">Change<span class="govuk-visually-hidden"> name</span></a>
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          What reason did the victim give for declining the meeting?
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          {{ data['reasonfordeline'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="category1-part-2/p2-offer-accepted">Change<span class="govuk-visually-hidden"> name</span></a>
+                        </dd>
+                      </div>
+                    </dl>
+                    <a href="category1-part-3-meeting-details/p1-date-of-meeting" class="govuk-button add-meeting-notes-button">Update meeting details</a>
+                  
+                    <a href="witness#contacts" id="victimresp-yes" class="govuk-button">Victim has accepted</a>
+                    <a href="category1-part-2/p4-reason-declined" id="victimresp-no-2" class="govuk-button govuk-button--warning">Victim has declined</a>
+                    <a href="cancel-meeting" id="accepted-but-cancel-meeting" class="govuk-button govuk-button--warning">Cancel meeting</a>
+                    <a href="category1-part-2/p1-record-no-response" id="recordanotherattempt-2" class="govuk-button govuk-button--secondary no-response">Record another no response</a>
+
+                  </div>
+
+                  <div class="loop loop3">
+                    <!-- Meeting details added -->
+                    <h2 class="govuk-heading-m">Duty to meet booked</h2>
+                    <dl class="govuk-summary-list govuk-!-margin-bottom-6">
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Time and date of the meeting
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                        {{ data['meeting-time'] }}  {{ data['meeting-date'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="category1-part-3-meeting-details/p1-date-of-meeting">Change<span class="govuk-visually-hidden"> name</span></a>
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Meeting location
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          {{ data['meeting-location'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="category1-part-3-meeting-details/p2--location">Change<span class="govuk-visually-hidden"> name</span></a>
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Meeting attendees
+                        </dt>
+                        <dd class="govuk-summary-list__value meetingattendeesdata">
+                          {{ data['meeting-attendees'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="category1-part-3-meeting-details/p3-attendees">Change<span class="govuk-visually-hidden"> name</span></a>
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Special measure
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          {{ data['reasonable-adjustments'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="category1-part-3-meeting-details/p4-special-measures">Change<span class="govuk-visually-hidden"> name</span></a>
+                        </dd>
+                      </div>
+
+                    </dl>
+                    <div class="button-arrary">
+                      <a href="meeting-outcome/p-0-did-meeting-happen" class="govuk-button">Update meeting outcomes</a> 
+                      <a href="" class="govuk-button govuk-button--secondary">Reschedule meeting</a> 
+                      <a href="" class="govuk-button govuk-button--warning">Cancel meeting</a> 
+                    </div>
+                  </div>
+                  
+                  <div class="loop loop4">
+                    <!-- Meeting OUTCOMES added -->
+                    <h2 class="govuk-heading-m">Meeting outcomes updates</h2>
+                    <dl class="govuk-summary-list govuk-!-margin-bottom-6">
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Meeting attendees
+                        </dt>
+                        <dd class="govuk-summary-list__value meetingattendeesdata">
+                        <strong>Chair person: {{ data['meeting-chair'] }} </strong><br>
+                        {{ data['invitess-attended'] }} 
+        
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="meeting-outcome/p-3-attendees">Change<span class="govuk-visually-hidden"> name</span></a>
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Meeting duration
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          {{ data['meeting-location'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="meeting-outcome/p-1-duration">Change<span class="govuk-visually-hidden"> name</span></a>
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Actions agreed
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          {{ data['actionsagreed'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="meeting-outcome/p-4-actions-agreed">Change<span class="govuk-visually-hidden"> name</span></a>
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Meeting notes and minutes
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          <a href="" target="_blank">{{ data['documents'] }}</a>
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="meeting-outcome/p-5-upload-notes.html">Change<span class="govuk-visually-hidden"> name</span></a>
+                        </dd>
+                      </div>
+                    </dl>
+                  </div>
+
+                  <!--LEGACY DATA DROPDOWNS-->
+                  <div id="legacy-data">
+                    <h2 class="govuk-heading-m legacy-heading">Contact history</h2>
+                    <details class="govuk-details legacy-loop legacy-loop-4">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          Meeting outcomes updates 
+                        </span>
+                        <strong class="govuk-tag">
+                          Completed
+                        </strong>
+                      </summary>
+                      <div class="govuk-details__text">
+                        [Meeting outcomes updates] 
+                      </div>
+                    </details>
+
+                    <details class="govuk-details legacy-loop legacy-loop-3">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          Duty to meet booked
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        <dl class="govuk-summary-list govuk-!-margin-bottom-6">
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                              Time and date of the meeting
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                            {{ data['meeting-time'] }}  {{ data['meeting-date'] }}
+                            </dd>
+                          </div>
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                              Meeting location
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              {{ data['meeting-location'] }}
+                            </dd>
+                          </div>
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                              Meeting attendees
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              {{ data['meeting-attendees'] }}
+                            </dd>
+                          </div>
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                              Special measure
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              {{ data['reasonable-adjustments'] }}
+                            </dd>
+                          </div>
+    
+                        </dl>
+                      </div>
+                    </details>
+
+                    <details class="govuk-details legacy-loop legacy-loop-2">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          Victim response to meeting offer
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        <!-- victim response ACCEPT -->
+                        <h2 class="govuk-heading-m acceptedmeeting">Victim response to meeting offer</h2>
+                        <dl class="govuk-summary-list govuk-!-margin-bottom-6 acceptedmeeting" id="acceptedmeeting">
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                              Victim response to meeting offer
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              <strong class="govuk-tag govuk-tag--green">
+                                Accepted
+                              </strong>
+                            </dd>
+                          </div>
+                      </dl>
+                    </details>
+
+                    <details class="govuk-details legacy-loop legacy-loop-1">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          Duty to meet offered
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        <h3 class="govuk-heading-m">Duty to meet</h3>
+                        <dl class="govuk-summary-list govuk-!-margin-bottom-6">
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                              Is the victim eligible for duty to meet
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              {{ data['eligible'] }}
+                            </dd>
+                          </div>
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                              Has the victim been offered a meeting?
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              {{ data['hasmeetingbeenofferred'] }}
+                            </dd>
+                          </div>
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                              How was the meeting offer made to the victim?
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              {{ data['howwasthemeetingoffered'] }}
+                            </dd>
+                          </div>
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                              When was the meeting offered to the victim?
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              {{ data['whenoffered'] }}
+                            </dd>
+                          </div>
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                              Offer letter
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                              <a href="" download>{{ data['fileUpload1'] }}</a>
+                            </dd>
+                          </div>
+                        </dl>
+                      </div>
+                    </details>
+                  </div>
+                </div>
+
+                <div class="govuk-grid-column-one-third button-set">
+                  <h3 class="govuk-heading-m">Actions</h3>
+                  <a href="add-another-victim-contact" id="addvictimcontact" class="govuk-button govuk-button--secondary">Add victim communication</a>
+                  
+                  <a href="meeting-outcome/p-1-duration" class="govuk-button hide contact-button-show">Add meeting outcomes</a><br><br>
+                  <a href="" class="govuk-button govuk-button--warning hide contact-button-show">Cancel or reschedule meeting</a>  
+                </div>   
+            </div>  
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+
+{% endblock %}

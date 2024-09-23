@@ -7,6 +7,30 @@
 /* ==========================================================================
    #DASHBOARD
    ========================================================================== */
+.govuk-summary-list__value {
+  vertical-align: text-top;
+}
+
+#hideinvitees {
+  display: none;
+  .govuk-radios__input {
+    z-index: 1;
+    width: 44px;
+    height: 30px !important;
+    margin-bottom: 16px !important;
+  }
+}
+#add-more-invitees {
+  display: flex;
+  margin-bottom: 10px;
+  .add-invitee-item {
+    width: 50%;
+    margin-right: 17px;
+  }
+  .govuk-checkboxes__item {
+    bottom: -28px;
+  }
+}
 #add-role {
   display: none;
   background: #f0f0f0;
@@ -218,12 +242,17 @@
     padding-left: 0px;
 }
 
+.disabledbutton {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
 
 .lightgrey {
   background: #f8f8f88f;
   padding: 18px 18px 0px 20px;
   margin: 27px 0px;
-  border-top: 1px solid #444444;
+  border-bottom: 2px solid #444444;
 }
 
 .moj-multi-file-upload {

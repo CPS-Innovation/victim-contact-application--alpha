@@ -1,6 +1,29 @@
 
 $(document).ready(function() {
 
+  var meetingatttendeetext = $('.meetingattendeesdata').text();
+  meetingatttendeetext = meetingatttendeetext.replace(/,/g, '<br>');
+  $('.meetingattendeesdata').html(meetingatttendeetext);
+
+  $('#show-add-more-fields').hide();
+  $('#toggle-add').click(function(){
+    $('#show-add-more-fields').show();
+    $('#toggle-add').hide();
+  });
+
+
+  $('#addinviteeaction').click(function(){
+    var invname = $('input[name=invitee--name]').val();
+    var invrole = $('input[name=invitee--role]').val();
+    $('.govuk-checkboxes--small').append('<div class="govuk-checkboxes__item"><input class="govuk-checkboxes__input" id="organisation" name="invitess-attended" type="checkbox" value="'+ invname + ' - '+invrole +'"><label class="govuk-label govuk-checkboxes__label" for="organisation"><strong>'+ invname +'</strong> - '+ invrole +'</label> </div>');
+    //$('#invitee-list').append('<li class="invitee govuk-body">'+invname +' - '+ invrole+'</li>');
+    $('#invitee-list').append('<div class="govuk-summary-list__row"><dd class="govuk-summary-list__value">'+ invname + '</dd><dd class="govuk-summary-list__value">'+invrole +'</dd><dd class="govuk-summary-list__value"><div class="govuk-radios__item govuk-radios--small"><input class="govuk-radios__input" id="changedName-2" name="meeting-chair" type="radio" value="'+ invname + '"><label class="govuk-label govuk-radios__label" for="changedName-2"></label></div> </dd></div>');
+    var textval = $('#hideinvitees').val();
+    $('#hideinvitees').val(textval + invname +' - '+ invrole+',');
+    $('input[name=invitee--name]').val('');
+    $('input[name=invitee--role]').val('');
+  });
+
   $('#dashboard-2').closest('main').parent('.govuk-width-container').addClass('newdashboard');
   $('#dashboard-2').closest('body').find('header').addClass('newdashboard-header');
   $('#dashboard-2').closest('body').addClass('dashstyle');
@@ -98,6 +121,44 @@ $(document).ready(function() {
   //defaults
   $('.button-set, #contacts .govuk-notification-banner').hide();
 
+  //ACCEPTED
+  $('#victimresp-yes, #victimresp-yes-2').click(function(){
+    localStorage.setItem("victimresponse", "accepted");  
+    $('#contacts .govuk-notification-banner__heading').text('Victim response updated');
+    $('.moj-ticket-panel, .loop, .no-response, #victimresp-no-2').hide();
+    $('.button-set, .acceptedmeeting, #contacts .govuk-notification-banner, .loop2').show();
+
+    localStorage.setItem('dtmstatus','loop1');
+    $('.legacy-loop').hide(); 
+    $('.legacy-loop-1, .legacy-heading').show(); 
+    $('#victimresp-yes, #victimresp-yes-2').hide();
+  });
+
+  //DECLINED
+  $('#victimresp-no, #victimresp-no-2').click(function(){
+    localStorage.setItem("victimresponse", "declined");  
+    $('#contacts .govuk-notification-banner__heading').text('Victim response updated');
+    $('.moj-ticket-panel, .loop, .acceptedmeeting, #acceptedmeeting, #victimresp-no-2').hide();
+    $('.acceptedmeeting, .add-meeting-notes-button').hide();
+    $('.start-cat1, .button-set, #contacts .govuk-notification-banner, .loop2, .legacy-heading').show();
+
+    localStorage.setItem('dtmstatus','loop1');
+    $('.legacy-loop').hide(); 
+    $('.legacy-loop-1, .legacy-heading, .button-set').show(); 
+  });
+  
+  $('#victimresp-no-response').click(function(){
+    localStorage.setItem("victimresponse", "no-response");  
+    //no response
+    $('#contacts .govuk-notification-banner__heading').text('Awaiting victim response');
+    $('.moj-ticket-panel, .loop, .acceptedmeeting, .add-meeting-notes-button').hide();
+    $('.button-set, #contacts .govuk-notification-banner, .loop2, .no-response, #acceptedmeeting').show();
+    
+    localStorage.setItem('dtmstatus','loop1');
+    $('.legacy-loop').hide(); 
+    $('.legacy-loop-1, .legacy-heading').show(); 
+  });
+
   $('#contacts').each(function(){
     var responsestatus = localStorage.getItem('victimresponse');
     
@@ -111,7 +172,7 @@ $(document).ready(function() {
     }
     if(responsestatus == 'no-response') {
       $('.acceptedmeeting, .declinemeeting').hide();
-      $('.no-response').show();
+      $('.no-response, .no-response').show();
       console.log('no-response');
     }
     if(responsestatus == '') {
@@ -181,6 +242,14 @@ $(document).ready(function() {
     }
   });
 
+  $('input[name=didimeetinghappen]').change(function(){
+    var eligibletomeet = $(this).val();
+    //alert(eligibletomeet);
+    if (eligibletomeet == 'No'){
+      $('form').attr('action','../meeting-not-conducted')
+    }
+  });
+
   $('select#preferredcontact').change(function(){
     var preferredcontact = $(this).find("option:selected").val();
     alert(preferredcontact);
@@ -207,7 +276,7 @@ $('#closemnotification').click(function(){
   if (referrer.indexOf("p1-what-was-the-victim-response") > -1) { 
     //accepted offer
     $('#contacts .govuk-notification-banner__heading').text('Victim response updated');
-    $('.moj-ticket-panel, .loop').hide();
+    $('.moj-ticket-panel, .loop, #victimresp-yes, #victimresp-no-2').hide();
     $('.button-set, .acceptedmeeting, #contacts .govuk-notification-banner, .loop2').show();
 
     localStorage.setItem('dtmstatus','loop1');
@@ -218,35 +287,46 @@ $('#closemnotification').click(function(){
   $('#shownewrole').click(function(){
     $('#add-role').show();
   });
+
+  $('#recordanotherattempt-2').click(function(){
+    localStorage.setItem('victimcontactattempts','1');
+  });
+
   //no response
   $('.attempt-3').hide();
+  $('#dashboard').each(function(){
+    localStorage.setItem('victimcontactattempts','0');
+  });
+
   var checkattempts = localStorage.getItem('victimcontactattempts');
 
   if (checkattempts == 3) {
     $('.numberofattempts').text('3 attempts');
-    $('#recordanotherattempt').hide();
-    $('.attempt-3').show();
+    $('.govuk-notification-banner__heading').text('Victim has been contacted 3 times with no response');
+    $('#recordanotherattempt, #recordanotherattempt-2').hide();
+    $('.attempt-3, #accepted-but-cancel-meeting, #cancel-meeting-btn').show();
     //alert('attempt 3');
     $('#recordanotherattempt').hide();
   }
 
   if (checkattempts == 2) {
     $('.numberofattempts').text('2 attempts');
-    $('#recordanotherattempt').click(function(){
+    $('#recordanotherattempt-2').click(function(){
       localStorage.setItem('victimcontactattempts','3');
+      $('#sla-window').text('1 July 2024');
     });
   }
   if (checkattempts == 1) {
-    $('.numberofattempts').text('1 attempts');
-    $('#recordanotherattempt').click(function(){
+    $('.numberofattempts').text('1 attempt');
+    $('#recordanotherattempt-2').click(function(){
       localStorage.setItem('victimcontactattempts','2');
+       $('#sla-window').text('21 June 2024');
     });
   } 
-  if (checkattempts < 1) {
-    $('#recordanotherattempt').click(function(){
-      $('.numberofattempts').text('2 attempts');
-      var incrimentAttempts =  localStorage.getItem('victimcontactattempts');
-      localStorage.setItem('victimcontactattempts','2');
+  if (checkattempts == 0) {
+    $('#recordanotherattempt-2').click(function(){
+      localStorage.setItem('victimcontactattempts','1');
+      $('#sla-window').text('1 June 2024');
     });
   }
   //count number of attempts to contact victim
@@ -254,7 +334,7 @@ $('#closemnotification').click(function(){
   if (referrer.indexOf("p1-record-no-response") > -1) { 
    //no response
     $('#contacts .govuk-notification-banner__heading').text('Awaiting victim response');
-    $('.moj-ticket-panel, .loop, .acceptedmeeting, .add-meeting-notes-button').hide();
+    $('.moj-ticket-panel, .loop, .acceptedmeeting, .add-meeting-notes-button, #accepted-but-cancel-meeting').hide();
     $('.button-set, #contacts .govuk-notification-banner, .loop2').show();
     
     localStorage.setItem('dtmstatus','loop1');
@@ -264,8 +344,8 @@ $('#closemnotification').click(function(){
 
   if (referrer.indexOf('p4-reason-declined') > -1) {
     $('#contacts .govuk-notification-banner__heading').text('Victim response updated');
-    $('.moj-ticket-panel, .loop, .acceptedmeeting, #acceptedmeeting').hide();
-    $('.acceptedmeeting, .add-meeting-notes-button').hide();
+    $('.moj-ticket-panel, .loop, .acceptedmeeting, #acceptedmeeting, #accepted-but-cancel-meeting').hide();
+    $('.acceptedmeeting, .add-meeting-notes-button, #victimresp-no-2').hide();
     $('.start-cat1, .button-set, #contacts .govuk-notification-banner, .loop2, .legacy-heading').show();
 
     localStorage.setItem('dtmstatus','loop1');
@@ -288,6 +368,7 @@ $('#closemnotification').click(function(){
     //$('.legacy-loop-1').show(); 
   }
 
+  //add-another-victim-contact
   //loop 3
   if (referrer.indexOf("p4-special-measures") > -1) { 
     $('#contacts .govuk-notification-banner__heading').text('Duty to meet created');
