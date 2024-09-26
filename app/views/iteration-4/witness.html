@@ -18,7 +18,7 @@
 <main class="govuk-main-wrapper" id="wittness">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-      <h1 class="govuk-heading-xl">Adelia Hand</h1>
+      <h1 class="govuk-heading-xl">Jennifer Davies</h1>
       <p class="govuk-caption-m">Case URN:  <span id="caseurn"></span></p>
 
           <strong class="govuk-tag sb-l">L - Vulnerable</strong>
@@ -190,7 +190,7 @@
                           <td class="govuk-table__cell govuk-table__cell--numeric">21 July 2024</td>
                         </tr>
                         <tr class="govuk-table__row">
-                          <th scope="row" class="govuk-table__header"><a href="#" class="pdf-link" download>Duty to meet letter</a></th>
+                          <th scope="row" class="govuk-table__header"><a href="#" class="pdf-link" download>CPS Pre-trial meeting letter</a></th>
                           <td class="govuk-table__cell govuk-table__cell--numeric">17 July 2024</td>
                         </tr>
                         <tr class="govuk-table__row">
@@ -235,7 +235,7 @@
                     <tbody class="govuk-table__body">
                       <tr class="govuk-table__row">
                         <th scope="col" class="govuk-table__header">Name Preference</th>
-                        <td class="govuk-table__cell"> Mrs Adelia Hand</td>
+                        <td class="govuk-table__cell"> Mrs Jennifer Davies</td>
                         <td class="govuk-table__cell"></td>
                       </tr>
                       <tr class="govuk-table__row">
@@ -653,7 +653,7 @@
 
                   <div class="loop loop1">
                     <!-- create DtM -->
-                    <h3 class="govuk-heading-m">Duty to meet</h3>
+                    <h3 class="govuk-heading-m">CPS Pre-trial meeting</h3>
 
                     <!--Vitim response-->
                     <dl class="govuk-summary-list">
@@ -686,7 +686,7 @@
 
                     <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-                    <h3 class="govuk-heading-m">Duty to meet offer</h3>
+                    <h3 class="govuk-heading-m">CPS Pre-trial meeting offer</h3>
                     <dl class="govuk-summary-list govuk-!-margin-bottom-6">
                       <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
@@ -780,7 +780,7 @@
                         <dd class="govuk-summary-list__actions">
                         </dd>
                       </div>
-                      <div class="govuk-summary-list__row">
+                      <div class="govuk-summary-list__row number-of-attempts-row">
                         <dt class="govuk-summary-list__key">
                           Victim to be contacted by
                         </dt>
@@ -863,7 +863,9 @@
                         </dd>
                       </div>
                     </dl>
-                    <a href="category1-part-3-meeting-details/p1-date-of-meeting" class="govuk-button add-meeting-notes-button">Update meeting details</a>
+                    <a href="who-requested-new-meeting" class="govuk-button" id="createnewpretrialmeeting">Create new pre-trial meeting</a>
+                    
+                    <a href="category1-part-3-meeting-details/meeting-mode" class="govuk-button add-meeting-notes-button">Update meeting details</a>
                   
                     <a href="witness#contacts" id="victimresp-yes" class="govuk-button">Victim has accepted</a>
                     <a href="category1-part-2/p4-reason-declined" id="victimresp-no-2" class="govuk-button govuk-button--warning">Victim has declined</a>
@@ -874,7 +876,7 @@
 
                   <div class="loop loop3">
                     <!-- Meeting details added -->
-                    <h2 class="govuk-heading-m">Duty to meet booked</h2>
+                    <h2 class="govuk-heading-m">CPS Pre-trial meeting booked</h2>
                     <dl class="govuk-summary-list govuk-!-margin-bottom-6">
                       <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
@@ -982,6 +984,38 @@
                     </dl>
                   </div>
 
+                  <div id="meeting-cancelled">
+                    <h3 class="govuk-heading-m">Pre-trial meeting cancelled</h3>
+                    <dl class="govuk-summary-list">
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Victim response to meeting offer
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          <strong class="govuk-tag govuk-tag--red">
+                            Meeting cancelled
+                          </strong>
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Date of cancellation 
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          <div id="cancellationdate"></div>
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Reason for cancellation  
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          {{ data['cancellationreason'] }}
+                        </dd>
+                      </div>
+                    </dl>
+                    <a href="category1/p3-has-the-victim-been-offered-meeting" class="govuk-button">Arrange a new pre-trial meeting</a>
+                  </div>
                   <!--LEGACY DATA DROPDOWNS-->
                   <div id="legacy-data">
                     <h2 class="govuk-heading-m legacy-heading">Contact history</h2>
@@ -1002,7 +1036,7 @@
                     <details class="govuk-details legacy-loop legacy-loop-3">
                       <summary class="govuk-details__summary">
                         <span class="govuk-details__summary-text">
-                          Duty to meet booked
+                          CPS Pre-trial meeting booked
                         </span>
                       </summary>
                       <div class="govuk-details__text">
@@ -1070,11 +1104,11 @@
                     <details class="govuk-details legacy-loop legacy-loop-1">
                       <summary class="govuk-details__summary">
                         <span class="govuk-details__summary-text">
-                          Duty to meet offered
+                          CPS Pre-trial meeting offered
                         </span>
                       </summary>
                       <div class="govuk-details__text">
-                        <h3 class="govuk-heading-m">Duty to meet</h3>
+                        <h3 class="govuk-heading-m">CPS Pre-trial meeting</h3>
                         <dl class="govuk-summary-list govuk-!-margin-bottom-6">
                           <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">

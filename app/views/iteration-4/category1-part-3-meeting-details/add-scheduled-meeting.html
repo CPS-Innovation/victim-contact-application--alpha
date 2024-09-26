@@ -1,0 +1,40 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Add the link to the MS Teams meeting
+      </h1>
+      <p class="govuk-body">You can get more information about <a href="https://support.microsoft.com/en-gb/office/schedule-a-meeting-in-microsoft-teams-943507a9-8583-4c58-b5d2-8ec8265e04e5" target="_blank">how to create a Teams meeting and creating a link on the Microsoft website (opens in a new window)</a></p>
+      <form class="form" action="p1-date-of-meeting" method="post">
+
+        <label class="govuk-label" for="event-name">
+         Add link to Teams call
+        </label>
+        <input class="govuk-input govuk-input--width-20" id="" name="teams-meeting-link" type="text"><br><br>
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

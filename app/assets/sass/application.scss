@@ -100,7 +100,8 @@
     width: 100%;
   }
 }
-.hide {
+.hide,
+#meeting-cancelled {
   display: none;
 }
 .newdashboard {

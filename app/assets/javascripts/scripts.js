@@ -1,6 +1,97 @@
 
 $(document).ready(function() {
 
+  $('#wittnesstable').hide();
+  $(function() {
+    var json = {
+    "victims": {
+      "victim": [
+        {
+          "id": "1",
+          "urn": "53635362",
+          "name": "Jennifer Davies",
+          "dob": "02/10/1979"
+        },
+        {
+          "id": "1",
+          "urn": "78397983",
+          "name": "Jennifer Davies",
+          "dob": "02/10/1979"
+        },
+        {
+          "id": "1",
+          "urn": "32879032",
+          "name": "Jennifer Davies",
+          "dob": "02/10/1979"
+        },
+        {
+          "id": "2",
+          "urn": "565837638",
+          "name": "Steve Baler",
+          "dob": "02/10/1979"
+        },
+        {
+          "id": "3",
+          "urn": "4649267363",
+          "name": "Andrew Baler",
+          "dob": "02/10/1979",
+          "urns": [
+            {
+              "urn": "743092543",
+            },
+            {
+              "urn": "021339832",
+            },
+            {
+              "urn": "894219210",
+            }
+          ]
+        }
+      ]
+     }
+    }
+    $.each(json.victims.victim, function(i, v) {
+      $('#wittnesstable').show();
+      console.log(v.urn);
+      $('#searchresults tr').remove();
+      $('#submitsearch').click(function(){
+        var urnsearchvalue = $('#searchrunfield').val();
+        if (v.urn == urnsearchvalue) {
+          $('#searchresults').append('<tr class="govuk-table__row"><td class="govuk-table__cell"><a href="" class="action">'+v.name+'</td><td class="govuk-table__cell">'+v.urn+'</td> </tr>')
+          $('#displayvictimname').text(v.name);
+          $('#displayvictimurn').text(v.urn);
+          //alert(v.cases.case);
+          $('#displayvictimcases li').remove();
+          for (var key in v.urns) {
+            if (typeof v.urns[key] === "object") {
+              console.log(v.urns[key]);  
+              $('#displayvictimcases').append('<li>'+JSON.stringify(v.urns[key])+'</li>'); 
+            } else {
+              $('#displayvictimcases').append('<li>'+JSON.stringify(v.urns[key])+'</li>'); 
+            }
+          }
+        }
+        if (v.name == urnsearchvalue) {
+          $('#searchresults').append('<tr class="govuk-table__row"><td class="govuk-table__cell"><a href="witness?caseid=&name='+v.name+'&caseurn='+v.urn+'" class="action">'+v.name+'</td><td class="govuk-table__cell">'+v.urn+'</td> </tr>')
+          $('#displayvictimname').text(v.name);
+          $('#displayvictimurn').text(v.urn);
+          //alert(v.cases.case);
+          $('#displayvictimcases li').remove();
+          for (var key in v.urns) {
+            if (typeof v.urns[key] === "object") {
+              console.log(v.urns[key]);  
+              $('#displayvictimcases').append('<li>'+JSON.stringify(v.urns[key])+'</li>'); 
+            } else {
+              $('#displayvictimcases').append('<li>'+JSON.stringify(v.urns[key])+'</li>'); 
+            }
+          }
+        }
+      });
+    });
+      
+  });
+  
+
   var meetingatttendeetext = $('.meetingattendeesdata').text();
   meetingatttendeetext = meetingatttendeetext.replace(/,/g, '<br>');
   $('.meetingattendeesdata').html(meetingatttendeetext);
@@ -330,6 +421,20 @@ $('#closemnotification').click(function(){
     });
   }
   //count number of attempts to contact victim
+  if (referrer.indexOf("cancel-meeting") > -1) { 
+
+    //get date 
+    var currentDate = new Date();
+    var day = currentDate.getDate();
+    var month = currentDate.getMonth() + 1;
+    var year = currentDate.getFullYear();
+
+    var formattedDate = day + '-' + month + '-' + year;
+    console.log(formattedDate);
+    $('#cancellationdate').text(formattedDate);
+    $('.moj-ticket-panel.meeting-not-set').hide();
+    $('.button-set, .legacy-heading, .legacy-loop-1, #meeting-cancelled').show();
+  }
 
   if (referrer.indexOf("p1-record-no-response") > -1) { 
    //no response
@@ -337,6 +442,13 @@ $('#closemnotification').click(function(){
     $('.moj-ticket-panel, .loop, .acceptedmeeting, .add-meeting-notes-button, #accepted-but-cancel-meeting').hide();
     $('.button-set, #contacts .govuk-notification-banner, .loop2').show();
     
+    var victimcontactattempts = localStorage.getItem('victimcontactattempts');
+    var victimcontactattempts = victimcontactattempts =+ 1;
+    var victimcontactattempts = localStorage.setItem('victimcontactattempts',victimcontactattempts);
+
+
+    localStorage.setItem('dtmstatus','loop1');
+   
     localStorage.setItem('dtmstatus','loop1');
     $('.legacy-loop').hide(); 
     $('.legacy-loop-1, .legacy-heading').show(); 
@@ -360,7 +472,7 @@ $('#closemnotification').click(function(){
   //loop1
   if (referrer.indexOf('category1/p5-upload-dtm') > -1) {
     $('#contacts .govuk-notification-banner__heading').text('Duty to meet created');
-    $('.loop, .moj-ticket-panel.meeting-not-set').hide();
+    $('.loop, .moj-ticket-panel.meeting-not-set, #arrnaneg-new-meeting').hide();
     $('.loop1, .govuk-notification-banner, .button-set').show();
     localStorage.setItem('dtmstatus','loop1');
 
